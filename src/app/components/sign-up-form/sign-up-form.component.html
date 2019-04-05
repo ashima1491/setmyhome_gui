@@ -1,0 +1,105 @@
+<form [formGroup]="rForm" (ngSubmit)="signUp(rForm.value)" >
+<div class="row divlogin">
+    
+  <div class="col-sm-6 divmascot" >   
+  <img src="../../../assets/images/mascot.JPG" alt="mascot">    
+      </div>
+      
+  <div class="col-sm-4">
+  <h2>Create your account</h2>
+  <div id="accntform">
+    <p id="passinstruct">Password must be 8-13 characters long. Your Password Must have at least 1 lowercase alphabet.
+          Your Password Must have at least 1 uppercase alphabet. Your Password Must have at least 1 number.</p>
+ 
+          <div class="form-group required">
+            <label class="control-label">First Name</label>
+            <input type="text" formControlName="fname" id="fname" class="form-control">
+            <div class="alert alert-danger" *ngIf="!rForm.controls['fname'].valid &&
+               rForm.controls['fname'].touched">
+              <div *ngIf="rForm.controls['fname'].errors.required">
+                First name is required
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group required">
+            <label class="control-label">Last Name</label>
+            <input type="text" formControlName="lname" id="lname" class="form-control">
+            <div class="alert alert-danger" *ngIf="!rForm.controls['lname'].valid && rForm.controls['lname'].touched">
+              <div *ngIf="rForm.controls['lname'].errors.required">
+                Last name is required
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group required">
+            <label class="control-label">Email Address</label>
+            <input type="text" formControlName="emailid" id="emailid" class="form-control">
+            <div class="alert alert-danger" *ngIf="!rForm.controls['emailid'].valid && rForm.controls['emailid'].touched">
+              <div *ngIf="rForm.controls['emailid'].errors.required">
+                Email address is required
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group required">
+            <label class="control-label">Phone Number</label>
+            <input type="text" formControlName="phonenumber" id="phonenumber" class="form-control">
+            <div class="alert alert-danger" *ngIf="!rForm.controls['phonenumber'].valid && rForm.controls['phonenumber'].touched">
+              <div *ngIf="rForm.controls['phonenumber'].errors.required">
+                Phone Number is required
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group required">
+            <label class="control-label">Password</label>
+            <input type="password" formControlName="password" id="password" class="form-control">
+            <div class="alert alert-danger" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">
+              <div *ngIf="rForm.controls['password'].errors.required">
+                Password is required
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group required">
+            <label class="control-label">Confirm Password</label>
+            <input type="password" formControlName="cpassword" id="cpassword" class="form-control">
+            <div class="alert alert-danger" *ngIf="!rForm.controls['cpassword'].valid && rForm.controls['cpassword'].touched">
+              <div *ngIf="rForm.controls['cpassword'].errors.required">
+                Confirmed Password is required
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group required ">
+            <!-- <label class="form-check-label"> Are you a: </label> -->
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" formControlName="type" 
+              name="type" id="student" value="student" checked
+                >
+              <label class="form-check-label" for="student">  A Student</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" formControlName="type"
+               name="type" id="donor" value="donor" >
+              <label class="form-check-label" for="donor">A Donor</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" formControlName="type" 
+              name="type" id="volunteer" value="volunteer">
+              <label class="form-check-label" for="volunteer">A Volunteer</label>
+            </div>
+            
+          </div>
+          <div class="form-group">
+            <input type="submit" class="button mybtn btn btn-primary expanded" id="submit" value="Sign Up" [disabled]="!rForm.valid">
+          </div>
+  </div>  
+   
+      
+     
+  </div>   
+  </div> 
+  </form>

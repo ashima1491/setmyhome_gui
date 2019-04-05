@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light myNav">
+  <a class="navbar-brand" href="#"> <img
+    src="../../../assets/images/logo.JPG" width="50" height="30"
+    class="d-inline-block align-top" alt="logoImage"> SetMyHouse
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active"><a class="nav-link" href="#">Furniture</a></li>
+      <li class="nav-item active"><a class="nav-link" href="#">Students</a></li>
+      <li class="nav-item active"><a class="nav-link" href="#">Donors</a></li>
+      <li class="nav-item active"><a class="nav-link" href="#">Volunteers</a></li>
+
+      <div *ngIf="username; else other">
+          <li class="nav-item active"><a class="nav-link" >Welcome {{username}}</a></li>
+      </div>
+      <ng-template #other>
+          <li class="nav-item active"><a class="nav-link" [routerLink]="['/setMyHome/login']">Login</a></li>
+      </ng-template>
+
+      <div *ngIf="username; else signup">
+
+          <li class="nav-item active"><button
+            class="btn mybtn my-2 my-sm-0"  [routerLink]="['/setMyHome/logout']">Log Out</button></li>
+      </div>
+      <ng-template #signup>
+          <li class="nav-item active"><button
+            class="btn mybtn my-2 my-sm-0"  [routerLink]="['/setMyHome/signUp']">Sign Up</button></li>
+        </ng-template>
+    
+    </ul>
+   
+      <input class="form-control mr-sm-2 searchBox" type="search"
+        placeholder="Search" aria-label="Search">
+      <button class="btn mybtn my-2 my-sm-0" type="submit">Search</button>
+    
+  </div>
+</nav>

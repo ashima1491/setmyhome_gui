@@ -1,0 +1,84 @@
+/*login page styles............
+................................. media query, have an account to be added*/
+
+
+
+.divlogin{
+    margin-top: 5%;
+    padding-bottom: 2.5rem;
+    overflow: hidden;
+}
+
+.divmascot img{
+    margin-left: 40%;
+    padding-bottom: 2.5rem;
+}
+
+.divlogin input{
+    display: block;
+    /* padding: 2%;
+    margin: 4%;*/
+    
+}
+
+.divlogin button{
+    background-color: #4189CC;
+	border: grey;
+	font-size: 20px;
+	color: white;
+    padding: 2%;
+    margin: 4%;
+    width: 65%;
+}
+
+
+.divlogin h2{
+    margin: 7% 4%;
+}
+
+
+
+.divlogin a
+{
+    text-decoration: none;
+    color: green;
+    margin: 0 6%;
+}
+
+#btnNoaccnt, #btnfrpass, #btnhaveacc
+{
+    background-color: transparent;
+    color:green;
+    margin: 0;
+    padding:0 ;
+    font-size: 1em;
+}
+
+
+#btnhaveacc{
+    margin: 0 auto;
+    width: 65%;
+    
+}
+
+#accntform
+{
+    width: 65%;
+}
+
+
+
+
+#passinstruct{
+    padding: 2%;
+    margin: 4%;
+    /* width: 65%; */
+    background-color: lightgreen;
+  
+   
+}
+
+.form-group.required .control-label:after {
+    content:"*";
+    color:red;
+  }

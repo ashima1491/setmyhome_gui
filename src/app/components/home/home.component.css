@@ -1,0 +1,69 @@
+.container-fluid {
+
+	background-color: white;
+}
+.myHomeCarousel {
+	margin-top: 2%;
+}
+.myhomeheader {
+	font-family: 'Indie Flower', cursive;
+	margin-top: 2%;
+	letter-spacing: 1px;
+	line-height: 1.44;
+    font-weight: bold;
+    
+}
+.myHomeSection1 {
+	margin-top: 5%;
+	background-color: #F8FAFB;
+	margin-bottom: 5%;
+}
+
+.myCol1Section1 {
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+
+.myCol2Section1 {
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+.journeyHeader
+{
+padding-bottom: 5%;
+}
+.journeyPara
+{
+padding-bottom: 5%;
+}
+.blueTheme {
+	color: #4189CC;
+}
+
+.mainThemeColor {
+	color: #E66760;
+}
+
+.myHomeSection2 {
+	background-color: #FF726A;
+	color: white;
+	margin-bottom: 5%;
+}
+
+.myCol1Section2 {
+	padding-top: 5%;
+	padding-bottom: 3%;
+}
+
+.sec2row2 {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.valueHeader {
+	padding-top: 5%; font-weight : bold;
+	padding-bottom: 5%;
+	font-weight: bold;
+}
+
+

@@ -1,0 +1,58 @@
+<div class="row divlogin">
+    
+  <div class="col-sm-6 divmascot" >   
+  <img src="../../../assets/images/mascot.JPG" alt="mascot">    
+      </div>
+      
+  <div class="col-sm-4">
+  <h2 id="logheader">Log in to your account</h2>
+  <form [formGroup]="rForm" (ngSubmit)="login(rForm.value)" >
+
+  <div id="loginform">
+      <div class="form-group required">
+          <label class="control-label">Email Address</label>
+          <input type="text" formControlName="emailid" id="emailid" class="form-control">
+          <div class="alert alert-danger" *ngIf="!rForm.controls['emailid'].valid &&
+             rForm.controls['emailid'].touched">
+            <div *ngIf="rForm.controls['emailid'].errors.required">
+              Email Id is required
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group required">
+            <label class="control-label">Password</label>
+            <input type="password" formControlName="password" id="password" class="form-control">
+            <div class="alert alert-danger" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">
+              <div *ngIf="rForm.controls['password'].errors.required">
+                Password is required
+              </div>
+            </div>
+          </div>
+          
+  <button  type="button" id="btnfrpass" name="forgot password">Forgot Password?</button>
+  <button  type="button" id="btnNoaccnt" name="forgot password" [routerLink]="['/setMyHome/signUp']">Don't have an account?</button>
+     
+      <div class="form-group">
+      <input type="submit" class="button btn btn-primary expanded" id="submit" value="Log In" [disabled]="!rForm.valid">
+        </div>
+        </div>
+  </form>
+  
+ <div id="loginreset" style="display: none">
+  
+   <p id="passinstruct">Password must be 8-13 characters long. Your Password Must have at least 1 lowercase alphabet.
+          Your Password Must have at least 1 uppercase alphabet. Your Password Must have at least 1 number.</p> 
+  <input type="email" id="txtemail" name="email" placeholder="Email">
+  <input type="text" id="txtquestion" name="security quesyion" placeholder="Security Question: Favorite color?">
+     <input type="password" id ="txtoldpass" name="password" placeholder="New Password">
+     
+     <input type="password" id ="txtoldpass" name="password" placeholder="Confrim Password">
+      <br>
+  <button type = "submit" name="login" id="btnlogin" class="btn btn-primary">Reset Password</button> 
+  </div>    
+      
+     
+  </div>   
+  </div> 
+  
