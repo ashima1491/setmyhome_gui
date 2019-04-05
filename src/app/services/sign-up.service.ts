@@ -20,7 +20,7 @@ export class SignUpService {
     var userInput :User ={} as any;
     userInput= user;
     console.log(userInput);
-    this.httpVar.post('/api/login/add', userInput).subscribe(r=> 
+    this.httpVar.post('https://fierce-woodland-50366.herokuapp.com/login/add', userInput).subscribe(r=> 
       {
         if(r.toString ()=="true")
         alert("Successful Sign Up!");
@@ -34,7 +34,7 @@ export class SignUpService {
     var userInput :User ={} as any;
     userInput= user;
     console.log(userInput);
-    return this.httpVar.post<User>('/api/login/authenticate', userInput);
+    return this.httpVar.post<User>('https://fierce-woodland-50366.herokuapp.com/login/authenticate', userInput);
       
 }
 }
