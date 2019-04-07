@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {SignUpService} from './services/sign-up.service';
+import {Ng2SmartTableModule} from 'ng2-smart-table'
 
 
 import { AppComponent } from './app.component';
@@ -17,6 +18,8 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { UserMgmtPageComponent } from './components/user-mgmt-page/user-mgmt-page.component';
+import { UserListComponent } from './components/user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -31,10 +34,13 @@ import { LogoutComponent } from './components/logout/logout.component';
     AdminPageComponent,
     AdminDashboardComponent,
     LogoutComponent,
+    UserMgmtPageComponent,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    Ng2SmartTableModule,
     HttpClientModule,
     RouterModule.forRoot([
 
@@ -52,6 +58,9 @@ import { LogoutComponent } from './components/logout/logout.component';
       },
       {
         path: 'setMyHome/logout', component: LogoutComponent
+      },
+      {
+        path: 'setMyHome/userList', component: UserMgmtPageComponent
       }
       
     ])

@@ -27,18 +27,18 @@
       <div *ngIf="username; else signup">
 
           <li class="nav-item active"><button
-            class="btn mybtn my-2 my-sm-0"  [routerLink]="['/setMyHome/logout']">Log Out</button></li>
+            class="btn my-2 my-sm-0"  [routerLink]="['/setMyHome/logout']">Log Out</button></li>
       </div>
       <ng-template #signup>
           <li class="nav-item active"><button
-            class="btn mybtn my-2 my-sm-0"  [routerLink]="['/setMyHome/signUp']">Sign Up</button></li>
+            class="btn  my-2 my-sm-0"  [routerLink]="['/setMyHome/signUp']">Sign Up</button></li>
         </ng-template>
     
     </ul>
    
       <input class="form-control mr-sm-2 searchBox" type="search"
         placeholder="Search" aria-label="Search">
-      <button class="btn mybtn my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn my-2 my-sm-0" type="submit">Search</button>
     
   </div>
 </nav>

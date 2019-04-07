@@ -10,9 +10,19 @@ body{
     min-height: 100vh;
     box-sizing: border-box;
 }
-button {
-	color: white;
+
+.btn
+{
+color: white !important;
+background-color: #4189CC !important;
 }
-.mybtn {
-	background-color: #4189CC;
+
+.blueTheme {
+	color: #4189CC;
 }
+
+.mainThemeColor {
+	color: #E66760;
+}
+
+

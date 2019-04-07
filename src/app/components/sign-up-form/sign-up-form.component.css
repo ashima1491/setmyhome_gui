@@ -56,22 +56,26 @@
 
 
 #btnhaveacc{
-    margin: 0 auto;
-    width: 65%;
+    margin: auto;
+     width: 100%;    
+    
     
 }
 
 #accntform
 {
-    width: 65%;
+    width: 75%;
 }
 
 
-
+.signUpbtn
+{
+    margin: 2% auto;
+}
 
 #passinstruct{
     padding: 2%;
-    margin: 4%;
+    /* margin-top: 4%;  */
     /* width: 65%; */
     background-color: lightgreen;
   
@@ -82,3 +86,42 @@
     content:"*";
     color:red;
   }
+  @media (max-width: 985px)
+{
+    .divlogin.col-sm-6 {
+        width: 80%;
+        overflow: hidden;
+    }
+    
+    .divlogin.col-sm-4{
+         width: 80%;
+        overflow: hidden;
+    }
+    
+    .divmascot img{
+        width: 50%;
+        margin-left: 25%;
+    }
+    
+    footer{
+       position: relative;
+        height: 8em;
+    }
+    
+    .col-sm-4{
+        margin-left: 15%;
+    }
+    
+    .maindiv{
+        display: block;
+    }
+}
+
+
+@media screen and (max-width: 480px){
+    
+}
+
+@media screen and (max-width: 768px){
+    
+}

@@ -3,11 +3,12 @@
     
   <div class="col-sm-6 divmascot" >   
   <img src="../../../assets/images/mascot.JPG" alt="mascot">    
-      </div>
+      </div> 
       
   <div class="col-sm-4">
-  <h2>Create your account</h2>
+ 
   <div id="accntform">
+    <h3 class="blueTheme">Create your account</h3>
     <p id="passinstruct">Password must be 8-13 characters long. Your Password Must have at least 1 lowercase alphabet.
           Your Password Must have at least 1 uppercase alphabet. Your Password Must have at least 1 number.</p>
  
@@ -72,29 +73,32 @@
             </div>
           </div>
 
-          <div class="form-group required ">
+          <div class="form-group required">
             <!-- <label class="form-check-label"> Are you a: </label> -->
 
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" formControlName="type" 
-              name="type" id="student" value="student" checked
+              name="type" id="admin" value="admin" checked
                 >
-              <label class="form-check-label" for="student">  A Student</label>
+              <label class="form-check-label" for="admin"> Admin</label>
             </div>
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" formControlName="type"
                name="type" id="donor" value="donor" >
-              <label class="form-check-label" for="donor">A Donor</label>
+              <label class="form-check-label" for="donor">Donor</label>
             </div>
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" formControlName="type" 
-              name="type" id="volunteer" value="volunteer">
-              <label class="form-check-label" for="volunteer">A Volunteer</label>
+              name="type" id="student" value="student">
+              <label class="form-check-label" for="student"> Student</label>
             </div>
             
           </div>
+          <button type="button" id="btnhaveacc"
+						onclick="window.location.href='login.html'">Already have
+						an account?</button>
           <div class="form-group">
-            <input type="submit" class="button mybtn btn btn-primary expanded" id="submit" value="Sign Up" [disabled]="!rForm.valid">
+            <input type="submit" class="btn btn-primary expanded signUpbtn" id="submit" value="Sign Up" [disabled]="!rForm.valid">
           </div>
   </div>  
    
