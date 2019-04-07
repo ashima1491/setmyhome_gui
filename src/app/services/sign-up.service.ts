@@ -20,7 +20,7 @@ export class SignUpService {
     var userInput :User ={} as any;
     userInput= user;
     console.log(userInput);
-    this.httpVar.post('/api/login/add', userInput).subscribe(r=> 
+    this.httpVar.post('https://fierce-woodland-50366.herokuapp.com/login/add', userInput).subscribe(r=> 
       {
         if(r.toString ()=="true")
         alert("Successful Sign Up!");
