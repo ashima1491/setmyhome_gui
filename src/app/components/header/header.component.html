@@ -12,19 +12,27 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active"><a class="nav-link" href="#">Furniture</a></li>
       <li class="nav-item active"><a class="nav-link" href="#">Students</a></li>
       <li class="nav-item active"><a class="nav-link" href="#">Donors</a></li>
-      <li class="nav-item active"><a class="nav-link" href="#">Volunteers</a></li>
+      <li class="nav-item active" *ngIf="username" ><a class="nav-link" [routerLink]="['']">Welcome {{username}}</a></li>
+      <li class="nav-item active" *ngIf="username" ><a class="nav-link" [routerLink]="['/setMyHome/admin']">My Dashboard </a></li>
+      <li class="nav-item active" *ngIf="!username"><a class="nav-link" [routerLink]="['/setMyHome/login']">Login</a></li>
 
-      <div *ngIf="username; else other">
-          <li class="nav-item active"><a class="nav-link" >Welcome {{username}}</a></li>
+      <!-- <li class="nav-item active"><a class="nav-link" href="#">Volunteers</a></li> -->
+
+      <!-- <div *ngIf="username; else other" class="d-flex flex-row">
+          <li class="nav-item active"><a class="nav-link" [routerLink]="['']">Welcome {{username}}</a></li>
+          <li class="nav-item active"><a class="nav-link" [routerLink]="['/setMyHome/admin']">My Dashboard </a></li>
       </div>
       <ng-template #other>
           <li class="nav-item active"><a class="nav-link" [routerLink]="['/setMyHome/login']">Login</a></li>
-      </ng-template>
+      </ng-template> -->
+      <li class="nav-item active" *ngIf="username"><button
+        class="btn my-2 my-sm-0"  [routerLink]="['/setMyHome/logout']">Log Out</button></li>
+        <li class="nav-item active" *ngIf="!username"><button
+          class="btn  my-2 my-sm-0"  [routerLink]="['/setMyHome/signUp']">Sign Up</button></li>
 
-      <div *ngIf="username; else signup">
+      <!-- <div *ngIf="username; else signup">
 
           <li class="nav-item active"><button
             class="btn my-2 my-sm-0"  [routerLink]="['/setMyHome/logout']">Log Out</button></li>
@@ -33,7 +41,7 @@
           <li class="nav-item active"><button
             class="btn  my-2 my-sm-0"  [routerLink]="['/setMyHome/signUp']">Sign Up</button></li>
         </ng-template>
-    
+     -->
     </ul>
    
       <input class="form-control mr-sm-2 searchBox" type="search"
