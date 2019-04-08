@@ -1,0 +1,14 @@
+.footer
+{
+   
+text-align: center;
+ padding: 1% 0; 
+background-color: lightgray;
+}
+
+
+.footer label
+{
+    padding:0 2% 0 2%;
+}
+

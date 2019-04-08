@@ -20,6 +20,7 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { LogoutComponent } from './components/logout/logout.component';
 import { UserMgmtPageComponent } from './components/user-mgmt-page/user-mgmt-page.component';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { UserListComponent } from './components/user-list/user-list.component';
     LogoutComponent,
     UserMgmtPageComponent,
     UserListComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
