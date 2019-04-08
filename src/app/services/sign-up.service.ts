@@ -3,6 +3,7 @@ import { User } from '../models/user';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import {Observable} from 'rxjs';
+import { Router } from '@angular/router';
 
 
 
@@ -13,7 +14,7 @@ import {Observable} from 'rxjs';
 export class SignUpService {
   public userSubject = new BehaviorSubject<User>(null);
 
-  constructor(public httpVar: HttpClient) { }
+  constructor(public httpVar: HttpClient, private router : Router) { }
 
   signUp(user)
   {
@@ -25,6 +26,7 @@ export class SignUpService {
       {
         if(r.toString ()=="true")
         alert("Successful Sign Up!");
+        this.router.navigateByUrl("/setMyHome/login");
       }
      );
 

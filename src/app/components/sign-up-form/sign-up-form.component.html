@@ -94,8 +94,8 @@
             </div>
             
           </div>
-          <button type="button" id="btnhaveacc"
-						onclick="window.location.href='login.html'">Already have
+          <button type="button" id="btnhaveacc" [routerLink]="['/setMyHome/login']"
+						>Already have
 						an account?</button>
           <div class="form-group">
             <input type="submit" class="btn btn-primary expanded signUpbtn" id="submit" value="Sign Up" [disabled]="!rForm.valid">
