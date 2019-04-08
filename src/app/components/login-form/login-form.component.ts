@@ -46,9 +46,9 @@ export class LoginFormComponent implements OnInit {
       
       {
         console.log(u);
-        if(u.emailid!=null)
+        if(null!=u.emailid)
         {
-          console.log("inide  ")
+          
           this.userService.setToken(u.emailid);
           this.userService.setFname(u.fname);
           if(u.type=='admin')
