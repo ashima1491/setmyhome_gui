@@ -13,16 +13,31 @@ export class EventService {
 
   createEvent(input)
   {
-    this.httpClient.post('/api/event/add', input).subscribe(r=>
+    //for local
+    // this.httpClient.post('/api/event/add', input).subscribe(r=>
       
-      {
-        console.log(r);
-        if("true"==r.toString())
-        {
-          alert("Event created successfully!");
-         // this.router.navigateByUrl("/setMyHome/admin");
-        }
+    //   {
+    //     console.log(r);
+    //     if("true"==r.toString())
+    //     {
+    //       alert("Event created successfully!");
+    //      // this.router.navigateByUrl("/setMyHome/admin");
+    //     }
         
-      })
+    //   });
+
+
+    // for heroku
+      this.httpClient.post('https://fierce-woodland-50366.herokuapp.com/event/add', input).subscribe(r=>
+      
+        {
+          console.log(r);
+          if("true"==r.toString())
+          {
+            alert("Event created successfully!");
+           // this.router.navigateByUrl("/setMyHome/admin");
+          }
+          
+        })
   }
 }

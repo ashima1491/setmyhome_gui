@@ -15,27 +15,44 @@ export class BookingService {
 
   createBooking(input)
   {
-    this.httpClient.post('/api/booking/add', input).subscribe(r=>
+    //for local
+    // this.httpClient.post('/api/booking/add', input).subscribe(r=>
       
-      {
-        console.log(r);
-        if("true"==r.toString())
-        {
-          alert("Booking created successfully!");
-         // this.router.navigateByUrl("/setMyHome/admin");
-        }
+    //   {
+    //     console.log(r);
+    //     if("true"==r.toString())
+    //     {
+    //       alert("Booking created successfully!");
+    //      // this.router.navigateByUrl("/setMyHome/admin");
+    //     }
         
-      })
+    //   });
+
+
+      //for heroku
+      this.httpClient.post('https://fierce-woodland-50366.herokuapp.com/booking/add', input).subscribe(r=>
+      
+        {
+          console.log(r);
+          if("true"==r.toString())
+          {
+            alert("Booking created successfully!");
+           // this.router.navigateByUrl("/setMyHome/admin");
+          }
+          
+        });
   }
 
   getAllEvents():Observable<Event[]>
   {
-    return this.httpClient.get<Event[]>('/api/event/all');
+    //return this.httpClient.get<Event[]>('/api/event/all');
+    return this.httpClient.get<Event[]>('https://fierce-woodland-50366.herokuapp.com/event/all');
   }
 
   getAllBookings(): Observable<Booking[]>
   {
-    return this.httpClient.get<Booking[]>('/api/booking/fetchAll');
+    //return this.httpClient.get<Booking[]>('/api/booking/fetchAll');
+    return this.httpClient.get<Booking[]>('https://fierce-woodland-50366.herokuapp.com/booking/fetchAll');
 
   }
 }

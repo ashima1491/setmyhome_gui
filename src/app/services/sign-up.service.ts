@@ -46,10 +46,10 @@ export class SignUpService {
     userInput= user;
    // console.log(userInput);
       //for heroku
-    //return this.httpVar.post<User>('https://fierce-woodland-50366.herokuapp.com/login/authenticate', userInput);
+    return this.httpVar.post<User>('https://fierce-woodland-50366.herokuapp.com/login/authenticate', userInput);
       
       //for local
-      return this.httpVar.post<User>('/api/login/authenticate', userInput);
+      //return this.httpVar.post<User>('/api/login/authenticate', userInput);
 
 }
 
@@ -57,10 +57,10 @@ export class SignUpService {
   {
     
       //for heroku
-   // return this.httpVar.get<User[]>('https://fierce-woodland-50366.herokuapp.com/login/all');
+    return this.httpVar.get<User[]>('https://fierce-woodland-50366.herokuapp.com/login/all');
 
       //for local
-      return this.httpVar.get<User[]>('/api/login/all');
+      //return this.httpVar.get<User[]>('/api/login/all');
 
   }
 }
