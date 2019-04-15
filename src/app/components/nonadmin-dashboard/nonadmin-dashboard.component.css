@@ -1,0 +1,70 @@
+.firstRow
+{
+    margin: 5%;
+    
+    
+}
+
+/* .mycontainer
+{
+    background-color: #FF9791;
+} */
+  
+
+.adminDb
+{
+    margin:2%;
+}
+
+
+.flex-container input[type=button]
+{
+    width: -webkit-fill-available;
+}
+.flex-container 
+{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.flex-container > div {
+    width: 150px;  
+   
+    margin: 10px;
+    flex-grow: 1;
+  }
+
+  
+
+  @media only screen and (min-width: 786px) {
+    .flex-container{
+        flex-direction: row;
+    }
+    .flex-container > div {
+        width: 150px;  
+       
+        margin: 10px;
+        flex-grow: 1;
+      }
+    .flex-container input[type=button]
+    {
+        width: -webkit-fill-available;
+    }
+    .card-img-top
+    {
+        width: 15vw;  
+        height: 15vw;
+        object-fit: cover;
+    }
+    .card
+    {
+        width: 15vw;     
+    height: 20vw;
+     
+    } 
+
+
+}

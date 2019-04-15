@@ -9,14 +9,30 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 export class HeaderComponent implements OnInit {
 
   username: string;
+  isAdmin: boolean;
 
   constructor(private userService: UserServiceService) { }
 
   ngOnInit() {
-    if(this.userService.isLogged)
-    {
-      this.username= this.userService.getFname();
-    }
+ 
+    this.userService.subject.subscribe(user=>
+      {
+        console.log(user);
+         
+          this.username= null==user?"": user.fname;
+          this.isAdmin= null==user? false:user.type=='admin';
+         
+
+         
+        
+      });
+
+    // if(this.userService.isLogged)
+    // {
+    //   this.username= this.userService.getFname();
+    //   this.isAdmin= this.userService.isAdmin();
+
+    // }
 
   }
 

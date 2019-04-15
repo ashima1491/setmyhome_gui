@@ -49,12 +49,19 @@ export class LoginFormComponent implements OnInit {
         if(null!=u.emailid)
         {
           
-          this.userService.setToken(u.emailid);
-          this.userService.setFname(u.fname);
+          this.userService.setToken(u);
+          //this.userService.setFname(u.fname);
+         
           if(u.type=='admin')
           {
-            console.log("navigating")
+            //console.log("navigating");
+            //this.userService.setAdminFlag();
             this.router.navigateByUrl('/setMyHome/admin');
+
+          }
+          else
+          {
+            this.router.navigateByUrl('/setMyHome/nonadmin');
 
           }
 

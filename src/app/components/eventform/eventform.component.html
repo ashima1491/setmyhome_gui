@@ -1,0 +1,52 @@
+<form [formGroup]="rForm" (ngSubmit)="createEvent(rForm.value)" >
+  <div class="row divlogin">
+      
+    
+        
+    <div class="col-sm-6">
+   
+    <div id="eventform">
+      <h3 class="blueTheme">Create an Event</h3>
+     
+            <div class="form-group required">
+              <label class="control-label">Event Name</label>
+              <input type="text" formControlName="name" id="name" class="form-control">
+              <div class="alert alert-danger" *ngIf="!rForm.controls['name'].valid &&
+                 rForm.controls['name'].touched">
+                <div *ngIf="rForm.controls['name'].errors.required">
+                  Event name is required
+                </div>
+              </div>
+            </div>
+  
+            <div class="form-group required">
+              <label class="control-label">Description</label>
+              <input type="text" formControlName="description" id="description" class="form-control">
+              <div class="alert alert-danger" *ngIf="!rForm.controls['description'].valid && rForm.controls['description'].touched">
+                <div *ngIf="rForm.controls['description'].errors.required">
+                  Description is required
+                </div>
+              </div>
+            </div>
+  
+            <div class="form-group required">
+              <label class="control-label">Date</label>
+              <input type="date" formControlName="date" id="date" class="form-control">
+              <div class="alert alert-danger" *ngIf="!rForm.controls['date'].valid && rForm.controls['date'].touched">
+                <div *ngIf="rForm.controls['date'].errors.required">
+                  Date is required
+                </div>
+              </div>
+            </div>
+           
+            
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary expanded signUpbtn" id="submit" value="Submit" [disabled]="!rForm.valid">
+            </div>
+    </div>  
+     
+        
+       
+    </div>   
+    </div> 
+    </form>

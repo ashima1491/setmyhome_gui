@@ -15,7 +15,9 @@
       <li class="nav-item active"><a class="nav-link" href="#">Students</a></li>
       <li class="nav-item active"><a class="nav-link" href="#">Donors</a></li>
       <li class="nav-item active" *ngIf="username" ><a class="nav-link" [routerLink]="['']">Welcome {{username}}</a></li>
-      <li class="nav-item active" *ngIf="username" ><a class="nav-link" [routerLink]="['/setMyHome/admin']">My Dashboard </a></li>
+      <li class="nav-item active" *ngIf="username&&isAdmin" ><a class="nav-link" [routerLink]="['/setMyHome/admin']">My Dashboard </a></li>
+      <li class="nav-item active" *ngIf="username&&!isAdmin" ><a class="nav-link" [routerLink]="['/setMyHome/nonadmin']">My Dashboard </a></li>
+
       <li class="nav-item active" *ngIf="!username"><a class="nav-link" [routerLink]="['/setMyHome/login']">Login</a></li>
 
       <!-- <li class="nav-item active"><a class="nav-link" href="#">Volunteers</a></li> -->

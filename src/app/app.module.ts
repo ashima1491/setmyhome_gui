@@ -21,6 +21,10 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { UserMgmtPageComponent } from './components/user-mgmt-page/user-mgmt-page.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { EventformComponent } from './components/eventform/eventform.component';
+import { EventPageComponent } from './components/event-page/event-page.component';
+import { NonadminPageComponent } from './components/nonadmin-page/nonadmin-page.component';
+import { NonadminDashboardComponent } from './components/nonadmin-dashboard/nonadmin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +42,10 @@ import { FooterComponent } from './components/footer/footer.component';
     UserMgmtPageComponent,
     UserListComponent,
     FooterComponent,
+    EventformComponent,
+    EventPageComponent,
+    NonadminPageComponent,
+    NonadminDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,23 +55,33 @@ import { FooterComponent } from './components/footer/footer.component';
     RouterModule.forRoot([
 
       {
-        path: '', component: PageComponent,
+        path: '', component: HomeComponent,
       },
       {
-        path: 'setMyHome/signUp', component: SignUpComponent
+        path: 'setMyHome/signUp', component: SignUpFormComponent
       },
       {
-        path: 'setMyHome/login', component: LoginComponent
+        path: 'setMyHome/login', component: LoginFormComponent
       },
       {
-        path: 'setMyHome/admin', component: AdminPageComponent
+        path: 'setMyHome/admin', component: AdminDashboardComponent
       },
       {
         path: 'setMyHome/logout', component: LogoutComponent
       },
       {
-        path: 'setMyHome/userList', component: UserMgmtPageComponent
+        path: 'setMyHome/admin/userList', component: UserListComponent
+      },
+      {
+        path: 'setMyHome/admin/eventPage', component: EventformComponent
+      },
+      {
+        path: 'setMyHome/nonadmin', component: NonadminDashboardComponent
+      },
+      {
+        path: 'setMyHome/nonadmin/booking', component: NonadminPageComponent
       }
+      
       
     ])
   ],
