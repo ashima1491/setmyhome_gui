@@ -22,21 +22,21 @@ export class SignUpService {
     userInput= user;
     console.log(userInput);
      //for heroku
-    // this.httpVar.post('https://fierce-woodland-50366.herokuapp.com/login/add', userInput).subscribe(r=> 
-    //   {
-    //     if(r.toString ()=="true")
-    //     alert("Successful Sign Up!");
-    //     this.router.navigateByUrl("/setMyHome/login");
-    //   }
-    //  );
-
-    // for local
-     this.httpVar.post('/api/login/add', userInput).subscribe(r=> 
+    this.httpVar.post('https://fierce-woodland-50366.herokuapp.com/login/add', userInput).subscribe(r=> 
       {
         if(r.toString ()=="true")
         alert("Successful Sign Up!");
+        this.router.navigateByUrl("/setMyHome/login");
       }
      );
+
+    // for local
+    //  this.httpVar.post('/api/login/add', userInput).subscribe(r=> 
+    //   {
+    //     if(r.toString ()=="true")
+    //     alert("Successful Sign Up!");
+    //   }
+    //  );
 
   }
 
