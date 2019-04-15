@@ -23,8 +23,9 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EventformComponent } from './components/eventform/eventform.component';
 import { EventPageComponent } from './components/event-page/event-page.component';
-import { NonadminPageComponent } from './components/nonadmin-page/nonadmin-page.component';
 import { NonadminDashboardComponent } from './components/nonadmin-dashboard/nonadmin-dashboard.component';
+import { BookingComponent } from './components/booking/booking.component';
+import { BookingListComponent } from './components/booking-list/booking-list.component';
 
 @NgModule({
   declarations: [
@@ -44,8 +45,9 @@ import { NonadminDashboardComponent } from './components/nonadmin-dashboard/nona
     FooterComponent,
     EventformComponent,
     EventPageComponent,
-    NonadminPageComponent,
     NonadminDashboardComponent,
+    BookingComponent,
+    BookingListComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,10 +78,13 @@ import { NonadminDashboardComponent } from './components/nonadmin-dashboard/nona
         path: 'setMyHome/admin/eventPage', component: EventformComponent
       },
       {
+        path: 'setMyHome/admin/bookings', component: BookingListComponent
+      },
+      {
         path: 'setMyHome/nonadmin', component: NonadminDashboardComponent
       },
       {
-        path: 'setMyHome/nonadmin/booking', component: NonadminPageComponent
+        path: 'setMyHome/nonadmin/booking', component: BookingComponent
       }
       
       

@@ -6,7 +6,7 @@ import { User } from '../models/user';
 
 const TOKEN = 'TOKEN';
 const FNAME='FNAME';
-const ADMIN='ADMIN';
+const TYPE='TYPE';
 
 @Injectable({
   providedIn: 'root'
@@ -17,31 +17,35 @@ export class UserServiceService {
   constructor() { }
   setToken(token: User): void {
     localStorage.setItem(TOKEN, token.emailid);
+    localStorage.setItem(FNAME, token.fname);
+    localStorage.setItem(TYPE, token.type);
     this.subject.next(token);
   }
 
-  // isLogged(): Observable<boolean> {
-  //   return Observable.create(localStorage.getItem(TOKEN) != null);
-  // }
+  isLogged() {
+    return localStorage.getItem(TOKEN)!=null;
+  }
  
+
+
   // setAdminFlag()
   // {
   //   localStorage.setItem(ADMIN, 'Y');
 
   // }
-  // isAdmin()
-  // {
-  //   return localStorage.getItem(ADMIN) == 'Y';
-  // }
+  isAdmin()
+  {
+    return localStorage.getItem(TYPE) == 'admin';
+  }
   // setFname(fname: string)
   // {
   //   localStorage.setItem(FNAME, fname);
 
   // }
-  // getFname()
-  // {
-  //   return localStorage.getItem(FNAME);
-  // }
+  getFname()
+  {
+    return localStorage.getItem(FNAME);
+  }
 
   logout()
   {

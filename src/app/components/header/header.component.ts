@@ -21,18 +21,14 @@ export class HeaderComponent implements OnInit {
          
           this.username= null==user?"": user.fname;
           this.isAdmin= null==user? false:user.type=='admin';
-         
-
-         
-        
       });
+ 
+    if(this.userService.isLogged())
+    {
+      this.username= this.userService.getFname();
+      this.isAdmin= this.userService.isAdmin();
 
-    // if(this.userService.isLogged)
-    // {
-    //   this.username= this.userService.getFname();
-    //   this.isAdmin= this.userService.isAdmin();
-
-    // }
+    }
 
   }
 

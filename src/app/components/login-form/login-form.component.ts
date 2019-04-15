@@ -40,7 +40,7 @@ export class LoginFormComponent implements OnInit {
 
   login(input)
   {
-    console.log(input);
+    //console.log(input);
     this.signUpService.login(input).subscribe( u=> 
       
       

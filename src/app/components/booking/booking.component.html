@@ -1,0 +1,69 @@
+<form [formGroup]="rForm" (ngSubmit)="createBooking(rForm.value)" >
+  <div class="row divlogin">
+      
+    
+    <div class="col-sm-6">
+   
+    <div id="accntform">
+      <h3 class="blueTheme">Register for Giveaway</h3>
+    
+            <div class="form-group required">
+              <label class="control-label">Events</label>
+              <select class="form-control" formControlName="eventName" id="eventName">
+                <option value="{{event.name}}" *ngFor="let event of events" [selected]="true">{{event.name}}</option>
+              </select>
+            </div>
+  
+            <div class="form-group required">
+              <label class="control-label">Heavy Furniture</label>
+              <input type="number" formControlName="heavyCategoryCount" id="heavyCategoryCount" class="form-control">
+              <!-- <div class="alert alert-danger" *ngIf="!rForm.controls['hcat'].valid && rForm.controls['hcat'].touched">
+                <div *ngIf="rForm.controls['hcat'].errors.required">
+                  Last name is required
+                </div>
+              </div> -->
+            </div>
+  
+            <div class="form-group required">
+              <label class="control-label">Medium Furniture</label>
+              <input type="number" formControlName="mediumCategoryCount" id="mediumCategoryCount" class="form-control">
+              <!-- <div class="alert alert-danger" *ngIf="!rForm.controls['emailid'].valid && rForm.controls['emailid'].touched">
+                <div *ngIf="rForm.controls['emailid'].errors.required">
+                  Email address is required
+                </div>
+              </div> -->
+            </div>
+  
+            <div class="form-group required">
+              <label class="control-label">Light Furniture</label>
+              <input type="number" formControlName="lowCategoryCount" id="lowCategoryCount" class="form-control">
+              <!-- <div class="alert alert-danger" *ngIf="!rForm.controls['emailid'].valid && rForm.controls['emailid'].touched">
+                <div *ngIf="rForm.controls['emailid'].errors.required">
+                  Email address is required
+                </div>
+              </div> -->
+            </div>
+  
+            <div class="form-group required">
+              <label class="control-label">Time Slot</label>
+              <select class="form-control"   formControlName="timeSlot" id="timeSlot" >
+                <option value="8.00 a.m- 9.00 a.m." [selected]="true">8.00 a.m- 9.00 a.m.</option>
+                <option value="9.00 a.m- 10.00 a.m." >9.00 a.m- 10.00 a.m.</option>
+
+              </select>
+            </div>
+  
+            
+  
+            
+           
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary expanded signUpbtn" id="submit" value="Register" [disabled]="!rForm.valid">
+            </div>
+    </div>  
+     
+        
+       
+    </div>   
+    </div> 
+    </form>
