@@ -18,6 +18,8 @@ export class BookingComponent implements OnInit {
   mediumCategoryCount: number;
   lowCategoryCount: number;
   timeSlot: string;
+  defaultTimeSlot: string="8.00 a.m. - 9.00 a.m.";
+  defaultEvent: string="GiveAway Event on May 11";
   
   events: Event[];
   constructor(private formBuilder: FormBuilder, private bookingService: BookingService,private userService: UserServiceService)
@@ -26,11 +28,11 @@ export class BookingComponent implements OnInit {
     this.getAllEvents();
     this.rForm = this.formBuilder.group(
       {
-        'eventName': [""],
+        'eventName': [this.defaultEvent],
         'heavyCategoryCount': [0],
         'mediumCategoryCount': [0],
         'lowCategoryCount': [0],
-        'timeSlot': [""]
+        'timeSlot': [this.defaultTimeSlot]
        
       }
     );
@@ -58,11 +60,21 @@ export class BookingComponent implements OnInit {
         
         {
           //console.log(user);
-      booking.userName=user.fname;
-      booking.userType=user.type;
+          if(null!=user)
+          {
+            booking.userName=user.fname;
+            booking.userType=user.type;
+          }
+      
         })
       
       this.bookingService.createBooking(booking);
       this.rForm.reset();
+      this.rForm.get('eventName').setValue(this.defaultEvent);
+      this.rForm.get('timeSlot').setValue(this.defaultTimeSlot);
+      this.rForm.get('heavyCategoryCount').setValue(0);
+      this.rForm.get('mediumCategoryCount').setValue(0);
+      this.rForm.get('lowCategoryCount').setValue(0);
+
   }
 }

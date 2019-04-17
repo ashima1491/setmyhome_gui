@@ -20,8 +20,8 @@ export class EventformComponent implements OnInit {
 
     this.rForm = this.formBuilder.group(
       {
-        'name': ["",Validators.required],
-        'description': ["",Validators.required],
+        'name': ["",[Validators.required, Validators.maxLength(30), Validators.minLength(5)]],
+        'description': ["",[Validators.required, Validators.maxLength(30), Validators.minLength(5)]],
         'date': ["",Validators.required]
       }
     );

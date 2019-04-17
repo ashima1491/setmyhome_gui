@@ -16,25 +16,37 @@
                 <div *ngIf="rForm.controls['name'].errors.required">
                   Event name is required
                 </div>
-              </div>
-            </div>
-  
-            <div class="form-group required">
-              <label class="control-label">Description</label>
-              <input type="text" formControlName="description" id="description" class="form-control">
-              <div class="alert alert-danger" *ngIf="!rForm.controls['description'].valid && rForm.controls['description'].touched">
-                <div *ngIf="rForm.controls['description'].errors.required">
-                  Description is required
+                <div *ngIf="rForm.controls['name'].errors.maxlength">
+                  Event name cannot be more than 30 characters
+                </div>
+                <div *ngIf="rForm.controls['name'].errors.minlength">
+                  Event name cannot be less than 5 characters
                 </div>
               </div>
             </div>
   
             <div class="form-group required">
-              <label class="control-label">Date</label>
+              <label class="control-label">Description</label>
+              <input type="text" title="event" formControlName="description" id="description" class="form-control">
+              <div class="alert alert-danger" *ngIf="!rForm.controls['description'].valid && rForm.controls['description'].touched">
+                <div *ngIf="rForm.controls['description'].errors.required">
+                  Description is required
+                </div>
+                <div *ngIf="rForm.controls['description'].errors.maxlength">
+                  Description cannot be more than 30 characters
+                </div>
+                <div *ngIf="rForm.controls['description'].errors.minlength">
+                  Description cannot be less than 5 characters
+                </div>
+              </div>
+            </div>
+  
+            <div class="form-group required">
+              <label class="control-label">Event Date</label>
               <input type="date" formControlName="date" id="date" class="form-control">
               <div class="alert alert-danger" *ngIf="!rForm.controls['date'].valid && rForm.controls['date'].touched">
                 <div *ngIf="rForm.controls['date'].errors.required">
-                  Date is required
+                  Event Date is required
                 </div>
               </div>
             </div>
@@ -42,7 +54,10 @@
             
             <div class="form-group">
               <input type="submit" class="btn btn-primary expanded signUpbtn" id="submit" value="Submit" [disabled]="!rForm.valid">
+              <input type="button" class="btn expanded" [routerLink]="['/setMyHome/admin']"
+              id="Back" value="Back" >
             </div>
+           
     </div>  
      
         

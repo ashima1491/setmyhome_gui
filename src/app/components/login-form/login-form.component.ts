@@ -27,8 +27,8 @@ export class LoginFormComponent implements OnInit {
     this.rForm = this.formBuilder.group(
       {
        
-        'emailid': ["",Validators.required],
-        'password': ["",Validators.required],
+        'emailid': ["",[Validators.required, Validators.maxLength(25)]],
+        'password': ["",[Validators.required, Validators.maxLength(13), Validators.minLength(8)]],
         
        
       }
@@ -46,7 +46,7 @@ export class LoginFormComponent implements OnInit {
       
       {
         console.log(u);
-        if(null!=u.emailid)
+        if(null!=u)
         {
           
           this.userService.setToken(u);
@@ -70,6 +70,10 @@ export class LoginFormComponent implements OnInit {
 
           //if(u.type=='donor')
           // this.router.navigateByUrl('/setMyHome/admin');
+        }
+
+        else{
+          alert("Invalid user credentials!");
         }
       })
   }

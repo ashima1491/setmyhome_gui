@@ -17,6 +17,9 @@
             <div *ngIf="rForm.controls['emailid'].errors.required">
               Email Id is required
             </div>
+            <div *ngIf="rForm.controls['emailid'].errors.maxlength">
+              Email Id cannot be more than 25 characters
+            </div>
           </div>
         </div>
 
@@ -26,6 +29,12 @@
             <div class="alert alert-danger" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">
               <div *ngIf="rForm.controls['password'].errors.required">
                 Password is required
+              </div>
+              <div *ngIf="rForm.controls['password'].errors.maxlength">
+                Password cannot be more than 13 characters
+              </div>
+              <div *ngIf="rForm.controls['password'].errors.minlength">
+                Password cannot be less than 8 characters
               </div>
             </div>
           </div>

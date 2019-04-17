@@ -20,6 +20,9 @@
               <div *ngIf="rForm.controls['fname'].errors.required">
                 First name is required
               </div>
+              <div *ngIf="rForm.controls['fname'].errors.maxlength">
+                First name cannot be more than 25 characters 
+              </div>
             </div>
           </div>
 
@@ -29,6 +32,9 @@
             <div class="alert alert-danger" *ngIf="!rForm.controls['lname'].valid && rForm.controls['lname'].touched">
               <div *ngIf="rForm.controls['lname'].errors.required">
                 Last name is required
+              </div>
+              <div *ngIf="rForm.controls['lname'].errors.maxlength">
+                Last name cannot be more than 25 characters 
               </div>
             </div>
           </div>
@@ -40,6 +46,9 @@
               <div *ngIf="rForm.controls['emailid'].errors.required">
                 Email address is required
               </div>
+              <div *ngIf="rForm.controls['emailid'].errors.maxlength">
+                Email ID cannot be more than 30 characters 
+              </div>
             </div>
           </div>
 
@@ -49,6 +58,9 @@
             <div class="alert alert-danger" *ngIf="!rForm.controls['phonenumber'].valid && rForm.controls['phonenumber'].touched">
               <div *ngIf="rForm.controls['phonenumber'].errors.required">
                 Phone Number is required
+              </div>
+              <div *ngIf="rForm.controls['phonenumber'].errors.maxlength">
+                Phone Number cannot be more than 10 characters 
               </div>
             </div>
           </div>
@@ -60,6 +72,12 @@
               <div *ngIf="rForm.controls['password'].errors.required">
                 Password is required
               </div>
+              <div *ngIf="rForm.controls['password'].errors.maxlength">
+                 Password cannot be more than 13 characters 
+              </div>
+              <div *ngIf="rForm.controls['password'].errors.minlength">
+                Password cannot be less than 8 characters 
+             </div>
             </div>
           </div>
 
@@ -69,6 +87,12 @@
             <div class="alert alert-danger" *ngIf="!rForm.controls['cpassword'].valid && rForm.controls['cpassword'].touched">
               <div *ngIf="rForm.controls['cpassword'].errors.required">
                 Confirmed Password is required
+              </div>
+              <div *ngIf="rForm.controls['cpassword'].errors.maxlength">
+                Confirmed Password cannot be more than 13 characters 
+              </div>
+              <div *ngIf="rForm.controls['cpassword'].errors.minlength">
+                Confirmed Password cannot be less than 8 characters 
               </div>
             </div>
           </div>

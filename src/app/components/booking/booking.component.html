@@ -10,7 +10,9 @@
             <div class="form-group required">
               <label class="control-label">Events</label>
               <select class="form-control" formControlName="eventName" id="eventName">
-                <option value="{{event.name}}" *ngFor="let event of events" [selected]="true">{{event.name}}</option>
+                  
+                  <option value="{{defaultEvent}}"  [selected]="true">{{defaultEvent}}</option>
+                <option value="{{event.name}}" *ngFor="let event of events">{{event.name}}</option>
               </select>
             </div>
   
@@ -47,9 +49,12 @@
             <div class="form-group required">
               <label class="control-label">Time Slot</label>
               <select class="form-control"   formControlName="timeSlot" id="timeSlot" >
-                <option value="8.00 a.m- 9.00 a.m." [selected]="true">8.00 a.m- 9.00 a.m.</option>
-                <option value="9.00 a.m- 10.00 a.m." >9.00 a.m- 10.00 a.m.</option>
-
+                <option value="{{defaultTimeSlot}}" [selected]="true">{{defaultTimeSlot}}</option>
+                <option value="9.00 a.m- 10.00 a.m." >9.00 a.m. - 10.00 a.m.</option>
+                <option value="9.00 a.m- 10.00 a.m." >10.00 a.m. - 11.00 a.m.</option>
+                <option value="9.00 a.m- 10.00 a.m." >11.00 a.m. - 12.00 p.m.</option>
+                <option value="9.00 a.m- 10.00 a.m." >1.00 a.m. - 2.00 p.m.</option>
+                <option value="9.00 a.m- 10.00 a.m." >2.00 a.m. - 3.00 p.m.</option>
               </select>
             </div>
   
@@ -59,6 +64,8 @@
            
             <div class="form-group">
               <input type="submit" class="btn btn-primary expanded signUpbtn" id="submit" value="Register" [disabled]="!rForm.valid">
+              <input type="button" class="btn expanded" [routerLink]="['/setMyHome/nonadmin']"
+              id="Back" value="Back" >
             </div>
     </div>  
      
