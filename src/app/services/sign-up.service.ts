@@ -25,8 +25,11 @@ export class SignUpService {
     this.httpVar.post('https://fierce-woodland-50366.herokuapp.com/login/add', userInput).subscribe(r=> 
       {
         if(r.toString ()=="true")
-        alert("Successful Sign Up!");
-        this.router.navigateByUrl("/setMyHome/login");
+        {
+          alert("Successful Sign Up!");
+          this.router.navigateByUrl("/setMyHome/login");
+        }
+        
       }
      );
 

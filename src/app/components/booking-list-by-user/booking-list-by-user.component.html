@@ -1,0 +1,27 @@
+
+  <div class="table-responsive">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th  scope="col">Event Name</th>
+      <th  scope="col">Time Slot</th>
+      <th  scope="col">Heavy Products</th>
+      <th  scope="col">Medium Products</th>
+      <th  scope="col">Low Products</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let booking of bookings">
+      <th scope="row">{{booking.eventName}}</th>
+      <td>{{booking.timeSlot}}</td>
+      <td>{{booking.heavyCategoryCount}}</td>
+      <td>{{booking.mediumCategoryCount}}</td>
+      <td>{{booking.lowCategoryCount}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<input type="button" class="btn expanded" [routerLink]="['/setMyHome/nonadmin']"
+id="Back" value="Back" >
+

@@ -55,4 +55,12 @@ export class BookingService {
     return this.httpClient.get<Booking[]>('https://fierce-woodland-50366.herokuapp.com/booking/fetchAll');
 
   }
+  getAllBookingsByUser(username): Observable<Booking[]>
+  {
+    //return this.httpClient.get<Booking[]>('/api/booking/fetch/'+username);
+    return this.httpClient.get<Booking[]>('https://fierce-woodland-50366.herokuapp.com/booking/fetch/'+username);
+
+  }
+
+
 }

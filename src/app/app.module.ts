@@ -20,6 +20,10 @@ import { EventformComponent } from './components/eventform/eventform.component';
 import { NonadminDashboardComponent } from './components/nonadmin-dashboard/nonadmin-dashboard.component';
 import { BookingComponent } from './components/booking/booking.component';
 import { BookingListComponent } from './components/booking-list/booking-list.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { BookingListByUserComponent } from './components/booking-list-by-user/booking-list-by-user.component';
+import { TestimonialComponent } from './components/testimonial/testimonial.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +40,10 @@ import { BookingListComponent } from './components/booking-list/booking-list.com
     NonadminDashboardComponent,
     BookingComponent,
     BookingListComponent,
+    ContactUsComponent,
+    BookingListByUserComponent,
+    TestimonialComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,9 +81,19 @@ import { BookingListComponent } from './components/booking-list/booking-list.com
       },
       {
         path: 'setMyHome/nonadmin/booking', component: BookingComponent
+      },
+      {
+        path: 'setMyHome/nonadmin/booking/view', component: BookingListByUserComponent
+      },
+      {
+        path: 'setMyHome/contactUs', component: ContactUsComponent
+      },
+      {
+        path: 'setMyHome/testimonials', component: TestimonialComponent
+      },
+      {
+        path: 'setMyHome/blog', component: BlogComponent
       }
-      
-      
     ])
   ],
   providers: [SignUpService],

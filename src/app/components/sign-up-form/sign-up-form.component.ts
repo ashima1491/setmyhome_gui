@@ -14,7 +14,7 @@ export class SignUpFormComponent implements OnInit {
   fname: string;
   lname: string;
   emailid: string;
-  phonenumber: string;
+  // phonenumber: string;
   password: string;
   cpassword: string;
   type: string;
@@ -27,7 +27,7 @@ export class SignUpFormComponent implements OnInit {
         'fname': ["",[Validators.required, Validators.maxLength(25)]],
         'lname': ["",[Validators.required, Validators.maxLength(25)]],
         'emailid': ["",[Validators.required, Validators.maxLength(30)]],
-        'phonenumber': ["",[Validators.required, Validators.maxLength(10)]],
+        // 'phonenumber': ["",[Validators.required, Validators.maxLength(10)]],
         'password': ["",[Validators.required, Validators.maxLength(13),  Validators.minLength(8)]],
         'cpassword': ["",[Validators.required, Validators.maxLength(13), Validators.minLength(8)]],
         'type': ["",Validators.required]

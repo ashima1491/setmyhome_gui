@@ -3,8 +3,14 @@ body, button, label {
 	/* 	font-family: "National", "Helvetica", "Arial", sans-serif;
  */
 	font-family: 'Century Gothic', Verdana, 'Helvetica Neue', sans-serif;
+	 /* font-family: 'Teko', sans-serif !important;  */
+	 /* font-family: 'Oleo Script', cursive !important;  */
 	letter-spacing: 1px;
 	line-height: 1.44;
+}
+
+a {
+	font-family: 'Oleo Script', cursive !important;
 }
 body{
     min-height: 100vh;

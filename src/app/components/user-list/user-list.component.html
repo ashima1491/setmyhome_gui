@@ -21,14 +21,37 @@
           </tr>
         </tbody>
     </table> -->
-    <br>
+    <!-- <br>
     <div class="smartTableWrapper text-center">
     <ng2-smart-table [settings]="settings" [source]="users">
       </ng2-smart-table>
       <input type="button" class="btn expanded" [routerLink]="['/setMyHome/admin']"
       id="Back" value="Back" >
-      </div>
-     
+      </div> -->
+      <div class="table-responsive">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th  scope="col">User Name</th>
+            <th  scope="col">Email Address</th>
+            <th  scope="col">User Type</th>
+          
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <th scope="row">{{user.fname}}</th>
+            <td>{{user.emailid}}</td>
+            <td>{{user.type}}</td>
+           
+          
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      <input type="button" class="btn expanded" [routerLink]="['/setMyHome/admin']"
+      id="Back" value="Back" >
   
   
   </div>

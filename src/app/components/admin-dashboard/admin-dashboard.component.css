@@ -37,7 +37,11 @@
     flex-grow: 1;
   }
 
-  
+  .adminBg img
+  {
+      max-width: 100%;
+      max-height: 100%;
+  }
 
   @media only screen and (min-width: 786px) {
     .flex-container{

@@ -6,7 +6,14 @@
   </div> -->
   
   <div class="container">
-    <h2 class="adminDb blueTheme">Admin Dashboard</h2>
+    <h2 class="adminDb blueTheme">Hello Admin! Manage your website from here!</h2>
+    <!-- <div class="row">
+      <div class="col-sm-12 adminBg">
+          <img src="../../../assets/images/adminDb.jpg">
+
+      </div>
+
+    </div> -->
     <div class="flex-container">
 
       
@@ -15,7 +22,7 @@
               <div class="card-body">
                 <h5 class="card-title"> 
                   <input type="button" class="btn btn-primary expanded" 
-                  id="submit" value="Users"  [routerLink]="['/setMyHome/admin/userList']">
+                  id="submit" value="View Users"  [routerLink]="['/setMyHome/admin/userList']">
                 </h5>
                 <p class="card-text"><small class="text-muted"></small></p>
               </div>
@@ -26,7 +33,7 @@
               <img class="card-img-top" src="../../../assets/images/event.JPG" alt="Event Management">
               <div class="card-body">
                   <input type="button" class="btn btn-primary expanded" 
-                  id="submit" value="Events" [routerLink]="['/setMyHome/admin/eventPage']" >
+                  id="submit" value="Create Events" [routerLink]="['/setMyHome/admin/eventPage']" >
                 <p class="card-text"><small class="text-muted"></small></p>
               </div>
             </div>
@@ -38,7 +45,7 @@
                 <img class="card-img-top" src="../../../assets/images/bookings.JPG" alt="Bookings">
                 <div class="card-body">
                     <input type="button" class="btn btn-primary expanded" [routerLink]="['/setMyHome/admin/bookings']"
-                    id="submit" value="Bookings">
+                    id="submit" value="View All Bookings">
                   <p class="card-text"><small class="text-muted"></small></p>
                 </div>
               </div>

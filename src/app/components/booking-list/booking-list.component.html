@@ -1,14 +1,37 @@
 <div *ngIf="bookings">
    
  
-  <br>
+  <!-- <br>
   <div class="smartTableWrapper text-center">
   <ng2-smart-table [settings]="settings" [source]="bookings">
     </ng2-smart-table>
     <input type="button" class="btn expanded" [routerLink]="['/setMyHome/admin']"
     id="Back" value="Back" >
+    </div> -->
+    <div class="table-responsive">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th  scope="col">Event Name</th>
+          <th  scope="col">Time Slot</th>
+          <th  scope="col">User Name</th>
+          <th  scope="col">User Type</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of bookings">
+          <th scope="row">{{booking.eventName}}</th>
+          <td>{{booking.timeSlot}}</td>
+          <td>{{booking.userName}}</td>
+          <td>{{booking.userType}}</td>
+        
+        </tr>
+      </tbody>
+    </table>
     </div>
- 
+    <input type="button" class="btn expanded" [routerLink]="['/setMyHome/admin']"
+    id="Back" value="Back" >
 
 
 </div>

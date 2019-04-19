@@ -1,7 +1,8 @@
 <footer>
   <div class="footer">
-    <label> About </label> <label> Contact Us </label> <label>
-      Events </label> <label> Blog </label> <label> Team </label>
+    <label [routerLink]="['']"> About </label> <label [routerLink]="['/setMyHome/contactUs']">
+       Contact Us </label> <label [routerLink]="['/setMyHome/testimonials']">
+      Testimonials </label> <label [routerLink]="['/setMyHome/blog']"> Blog </label> <label> Team </label>
     <p class="copyright">@Developed by Team 17</p>
   </div>
 </footer>
