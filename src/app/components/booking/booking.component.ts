@@ -30,6 +30,9 @@ export class BookingComponent implements OnInit {
   mediumFurniture: Furniture[];
   smallFurniture: Furniture[];
   bookinglist: Array<Bookingviewmodel>;
+  furnitureKeyValue: Array<Bookingviewmodel>;
+  userName: string;
+  userType: string;
   
   events: Event[];
   constructor(private formBuilder: FormBuilder, private bookingService: BookingService, private userService: UserServiceService
@@ -41,6 +44,7 @@ export class BookingComponent implements OnInit {
     this.getMedium("Medium");
     this.getSmall("Small");
     this.bookinglist = [];
+    this.furnitureKeyValue = [{ furnitureName: "Couch", count: 5 }, { furnitureName: "Table", count: 5}];
 
     this.rForm = this.formBuilder.group(
       {
@@ -99,14 +103,42 @@ export class BookingComponent implements OnInit {
 
   changeEvent(count, name) {
 
-    let selectionData = {} as Bookingviewmodel;
-    selectionData.furnitureName =name;
-    selectionData.count = count;
-    this.bookinglist.push(selectionData);
-    console.log(this.bookinglist);
+    if (this.userName != null) {
+
+      let selectionData = {} as Bookingviewmodel;
+      selectionData.furnitureName = name;
+      selectionData.count = count;
+
+      if (this.userType == "donor") {
+
+        this.bookinglist.push(selectionData);
+        console.log(this.bookinglist);
+
+      } else if (this.userType == "student") {
+
+        let index = this.furnitureKeyValue.indexOf(name);
+        if (count > this.furnitureKeyValue[index].count) {
+
+          this.bookinglist.push(selectionData);
+          console.log(this.bookinglist);
+
+        } else {
+          let stock = this.furnitureKeyValue[index].count - count;
+          alert("We currently have " + stock + "items of this furniture available");
+        }
+      }
+    }  
   }
   
   ngOnInit() {
+    this.userService.subject.subscribe(user => {
+      console.log(user);
+      if (null != user) {
+        this.userName = user.fname;
+        this.userType = user.type;
+      }
+
+    })
   }
 
   createBooking(input)
@@ -120,17 +152,7 @@ export class BookingComponent implements OnInit {
     booking = input;
     booking.bookingviewmodel = this.bookinglist;
     console.log(booking);
-      this.userService.subject.subscribe(user=> 
-        
-        {
-          console.log(user);
-          if(null!=user)
-          {
-            //booking.userName=user.fname;
-            //booking.userType=user.type;
-          }
-      
-        })
+
     booking.userName = "donor";
     booking.userType = "donor";
 
@@ -142,6 +164,7 @@ export class BookingComponent implements OnInit {
       this.rForm.get('mediumCategoryCount').setValue(0);
       this.rForm.get('lowCategoryCount').setValue(0);
       this.bookinglist = [];
+      this.furnitureKeyValue = [];
 
   }
 }
