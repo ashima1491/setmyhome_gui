@@ -19,6 +19,7 @@ export class BookingListByUserComponent implements OnInit {
 
     var username=this.userService.getFname();
     this.bookingService.getAllBookingsByUser(username).subscribe(bookings => {
+      console.log(bookings);
       this.bookings = bookings;
       
     });

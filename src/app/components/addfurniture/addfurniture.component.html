@@ -1,0 +1,39 @@
+<form [formGroup]="rForm" (ngSubmit)="addfurniture(rForm.value)" >
+  <div class="row">
+      
+    
+    <div class="col-sm-6">
+   
+    <div id="addfurnuture">
+      <h3 class="blueTheme">Add Furniture</h3>
+    
+            <div class="form-group required">
+              <label class="control-label">Category</label>
+              <select class="form-control" formControlName="category" id="category">
+                  
+                  <option value="Heavy"  [selected]="true">Heavy</option>
+                <option value="Medium">Medium</option>
+                   <option value="Small">Small</option>
+              </select>
+            </div>
+  
+            <div class="form-group required">
+              <label class="control-label">Furniture Name</label>
+              <input type="text" formControlName="furnitureName" id="furnitureName" class="form-control">
+              <!-- <div class="alert alert-danger" *ngIf="!rForm.controls['hcat'].valid && rForm.controls['hcat'].touched">
+                <div *ngIf="rForm.controls['hcat'].errors.required">
+                  Last name is required
+                </div>
+              </div> -->
+            </div>
+           
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary expanded signUpbtn" id="submit" value="Add Furniture" [disabled]="!rForm.valid">
+              <input type="button" class="btn expanded" [routerLink]="['/setMyHome/nonadmin']"
+              id="Back" value="Back" >
+            </div>
+    </div>  
+       
+    </div>   
+    </div> 
+    </form>
