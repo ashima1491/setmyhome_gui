@@ -1,69 +1,76 @@
-<div class="row divlogin">
-    
- 
-      
-  <div class="col-sm-6">
-  <form [formGroup]="rForm" (ngSubmit)="login(rForm.value)" >
+<div class="divlogin my-5 py-5" style="margin:140px 0 !important;">
 
-  <div id="loginform">
-      <h3 class="blueTheme">Welcome to SetMyHouse!</h3>
+<div class="row">
 
-      <div class="form-group required">
-          <label class="control-label">Email Address</label>
-          <input type="text" formControlName="emailid" id="emailid" class="form-control">
-          <div class="alert alert-danger" *ngIf="!rForm.controls['emailid'].valid &&
-             rForm.controls['emailid'].touched">
-            <div *ngIf="rForm.controls['emailid'].errors.required">
-              Email Id is required
-            </div>
-            <div *ngIf="rForm.controls['emailid'].errors.maxlength">
-              Email Id cannot be more than 25 characters
-            </div>
-          </div>
-        </div>
+	<div class="col-md-6">
+		<form [formGroup]="rForm" (ngSubmit)="login(rForm.value)">
+	
+			<div id="loginform">
+				<h3 class="blueTheme">Welcome to SetMyHouse!</h3>
+	
+				<div class="form-group required">
+					<label class="control-label">Email Address</label>
+					<input type="text" formControlName="emailid" id="emailid" class="form-control">
+					<div class="alert alert-danger" *ngIf="!rForm.controls['emailid'].valid &&
+			 rForm.controls['emailid'].touched">
+						<div *ngIf="rForm.controls['emailid'].errors.required">
+							Email Id is required
+						</div>
+						<div *ngIf="rForm.controls['emailid'].errors.maxlength">
+							Email Id cannot be more than 25 characters
+						</div>
+					</div>
+				</div>
+	
+				<div class="form-group required">
+					<label class="control-label">Password</label>
+					<input type="password" formControlName="password" id="password" class="form-control">
+					<div class="alert alert-danger"
+						*ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">
+						<div *ngIf="rForm.controls['password'].errors.required">
+							Password is required
+						</div>
+						<div *ngIf="rForm.controls['password'].errors.maxlength">
+							Password cannot be more than 13 characters
+						</div>
+						<div *ngIf="rForm.controls['password'].errors.minlength">
+							Password cannot be less than 8 characters
+						</div>
+					</div>
+				</div>
+	
+				<button type="button" id="btnfrpass" name="forgot password">Forgot Password?</button>
+				<button type="button" id="btnNoaccnt" name="forgot password" [routerLink]="['/setMyHome/signUp']">Don't
+					have an
+					account?</button>
+	
+				<div class="form-group">
+					<input type="submit" class="btn btn-primary expanded loginbtn" id="submit" value="Log In"
+						[disabled]="!rForm.valid">
+				</div>
+			</div>
+		</form>
+	
+		<div id="loginreset" style="display: none">
+	
+			<p id="passinstruct">Password must be 8-13 characters long. Your Password Must have at least 1 lowercase
+				alphabet.
+				Your Password Must have at least 1 uppercase alphabet. Your Password Must have at least 1 number.</p>
+			<input type="email" id="txtemail" name="email" placeholder="Email">
+			<input type="text" id="txtquestion" name="security quesyion"
+				placeholder="Security Question: Favorite color?">
+			<input type="password" id="txtoldpass" name="password" placeholder="New Password">
+	
+			<input type="password" id="txtoldpass" name="password" placeholder="Confrim Password">
+			<br>
+			<button type="submit" name="login" id="btnlogin" class="btn btn-primary">Reset Password</button>
+		</div>
+	
+	
+	</div>
+	<div class="col-md-6 divmascot">
+		<img src="../../../assets/images/mascot.JPG" alt="mascot">
+	</div>
+</div>
 
-        <div class="form-group required">
-            <label class="control-label">Password</label>
-            <input type="password" formControlName="password" id="password" class="form-control">
-            <div class="alert alert-danger" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">
-              <div *ngIf="rForm.controls['password'].errors.required">
-                Password is required
-              </div>
-              <div *ngIf="rForm.controls['password'].errors.maxlength">
-                Password cannot be more than 13 characters
-              </div>
-              <div *ngIf="rForm.controls['password'].errors.minlength">
-                Password cannot be less than 8 characters
-              </div>
-            </div>
-          </div>
-          
-  <button  type="button" id="btnfrpass" name="forgot password">Forgot Password?</button>
-  <button  type="button" id="btnNoaccnt" name="forgot password" [routerLink]="['/setMyHome/signUp']">Don't have an account?</button>
-     
-      <div class="form-group">
-      <input type="submit" class="btn btn-primary expanded loginbtn" id="submit" value="Log In" [disabled]="!rForm.valid">
-        </div>
-        </div>
-  </form>
-  
- <div id="loginreset" style="display: none">
-  
-   <p id="passinstruct">Password must be 8-13 characters long. Your Password Must have at least 1 lowercase alphabet.
-          Your Password Must have at least 1 uppercase alphabet. Your Password Must have at least 1 number.</p> 
-  <input type="email" id="txtemail" name="email" placeholder="Email">
-  <input type="text" id="txtquestion" name="security quesyion" placeholder="Security Question: Favorite color?">
-     <input type="password" id ="txtoldpass" name="password" placeholder="New Password">
-     
-     <input type="password" id ="txtoldpass" name="password" placeholder="Confrim Password">
-      <br>
-  <button type = "submit" name="login" id="btnlogin" class="btn btn-primary">Reset Password</button> 
-  </div>    
-      
-     
-  </div>   
-  <div class="col-sm-6 divmascot" >   
-      <img src="../../../assets/images/mascot.JPG" alt="mascot">    
-          </div>
-  </div> 
-  
+</div>

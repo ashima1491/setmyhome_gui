@@ -1,0 +1,52 @@
+.myhomeheader {
+	font-family: 'Indie Flower', cursive;
+	margin-top: 2%;
+	letter-spacing: 1px;
+	line-height: 1.44;
+    font-weight: bold;
+}
+.myHomeSection1 a{
+    display: block;
+    height: 100%;
+    transition: .5s ease;
+    -moz-transition: .5s ease;
+    -webkit-transition: .5s ease;
+    
+}
+.myHomeSection1 a:before{
+    background: linear-gradient(180deg,transparent,rgba(0,0,0,.54));
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+
+
+.gallery_img{
+    overflow: hidden;
+    height:400px;
+    position: relative;
+}
+.gallery_img .desc{
+    position: absolute;
+    bottom: 10px;
+    left:10px;
+    color:#fff;
+    padding: 15px 40px;
+    width: 100%;
+    z-index: 2;
+    font-size: 18px;
+}
+
+.gallery_img:hover a{
+    transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transition: .5s ease;
+    -moz-transition: .5s ease;
+    -webkit-transition: .5s ease;
+}

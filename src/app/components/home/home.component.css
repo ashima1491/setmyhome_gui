@@ -1,9 +1,38 @@
-.container-fluid {
-
-	background-color: white;
+.wrapper{
+	background:#fff;
+	overflow-x: hidden;
 }
+.banner_cont {
+	position:relative;
+	height: 100vh;
+}
+.banner_cont .banner_box{
+	position:absolute;
+	left: 0;
+	right:0;
+	top:0;
+	bottom:0;
+	z-index: 2;
+}
+
+.banner_cont .jumbotron{
+	background: rgba(0,0,0,.7);
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	text-align: center;	
+	color:#fff;
+	border: solid 5px #FF726A;
+	
+}
+.carousel-inner{
+	height: 100vh;
+}
+
 .myHomeCarousel {
 	margin-top: 2%;
+
 }
 .myhomeheader {
 	font-family: 'Indie Flower', cursive;
@@ -14,9 +43,24 @@
     
 }
 .myHomeSection1 {
-	margin-top: 5%;
+	
 	background-color: #F8FAFB;
-	margin-bottom: 5%;
+}
+.stud_count{
+	background: royalblue !important;
+	display: inline-block;
+	color:#fff;
+	border-radius: 5px;
+}
+.myHomeSection1 .stud_count h2{
+	
+	font-size: 45px !important;
+	font-weight: bold;
+	
+}
+.myHomeSection1 .stud_count p{
+	font-size:16px !important;
+	font-weight: normal;	
 }
 
 .myCol1Section1 {
@@ -25,8 +69,7 @@
 }
 
 .myCol2Section1 {
-	padding-top: 5%;
-	padding-bottom: 5%;
+
 }
 .journeyHeader
 {
@@ -41,7 +84,7 @@ padding-bottom: 5%;
 .myHomeSection2 {
 	background-color: #FF726A;
 	color: white;
-	margin-bottom: 5%;
+	
 }
 
 .myCol1Section2 {
@@ -60,4 +103,35 @@ padding-bottom: 5%;
 	font-weight: bold;
 }
 
+#myCarousel .carousel-control-prev{
+	position: static;
+}
+#myCarousel .carousel-inner{
+	height: auto;
+}
+
+
+
+
+
+@media (max-width:1024px){
+	.banner_cont{
+		height:auto;
+	}
+	.banner_cont .jumbotron h1{
+		font-size:30px;
+	}
+	.carousel-inner{
+		height:auto;
+	}
+}
+@media (max-width:480px){
+	.banner_cont .jumbotron{
+		width:90%;
+		padding: 0px 15px;
+	}
+	.banner_cont .jumbotron h1{
+		font-size:20px;
+	}
+}
 

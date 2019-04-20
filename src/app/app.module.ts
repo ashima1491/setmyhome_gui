@@ -25,6 +25,7 @@ import { BookingListByUserComponent } from './components/booking-list-by-user/bo
 import { TestimonialComponent } from './components/testimonial/testimonial.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { AddfurnitureComponent } from './components/addfurniture/addfurniture.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { AddfurnitureComponent } from './components/addfurniture/addfurniture.co
     TestimonialComponent,
     BlogComponent,
     AddfurnitureComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
@@ -98,6 +100,9 @@ import { AddfurnitureComponent } from './components/addfurniture/addfurniture.co
       }, 
       {
       path: 'setMyHome/admin/addfurniture', component: AddfurnitureComponent
+      },
+      {
+        path: 'setMyHome/gallery', component: GalleryComponent
       }
     ])
   ],

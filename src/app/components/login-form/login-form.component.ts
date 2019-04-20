@@ -27,7 +27,7 @@ export class LoginFormComponent implements OnInit {
     this.rForm = this.formBuilder.group(
       {
        
-        'emailid': ["",[Validators.required, Validators.maxLength(25)]],
+        'emailid': ["",[Validators.required, Validators.maxLength(100)]],
         'password': ["",[Validators.required, Validators.maxLength(13), Validators.minLength(8)]],
         
        
