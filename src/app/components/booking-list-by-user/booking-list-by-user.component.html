@@ -1,61 +1,62 @@
+<div *ngIf="bookings">
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Event Name</th>
+          <th scope="col">Time Slot</th>
+          <th scope="col">Date</th>
+          <!-- <th  scope="col">Medium Products</th>
+          <th  scope="col">Low Products</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of bookings">
+          <th scope="row">{{booking.event.name}}</th>
+          <td>{{booking.timeSlot}}</td>
+          <td>{{booking.event.date}}</td>
+          <!-- <td>{{booking.mediumFurnitureName}}&nbsp;{{booking.mediumCategoryCount}}</td>
+          <td>{{booking.smallFurnitureName}}&nbsp;{{booking.lowCategoryCount}}</td> -->
+          <td><input type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="details" value="View Booking" /></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-<div class="table-responsive">
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Event Name</th>
-        <th scope="col">Time Slot</th>
-        <th scope="col">Date</th>
-        <!-- <th  scope="col">Medium Products</th>
-        <th  scope="col">Low Products</th> -->
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let booking of bookings">
-        <th scope="row">{{booking.event.name}}</th>
-        <td>{{booking.timeSlot}}</td>
-        <td>{{booking.event.date}}</td>
-        <!-- <td>{{booking.mediumFurnitureName}}&nbsp;{{booking.mediumCategoryCount}}</td>
-        <td>{{booking.smallFurnitureName}}&nbsp;{{booking.lowCategoryCount}}</td> -->
-        <td><input type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="details" value="View Booking" /></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
 
-<!-- The Modal -->
-<div class="modal fade" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Booking Details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
 
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Booking Details</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <!-- Modal body -->
+        <div class="modal-body">
+          <ul>
+
+            <li>{{booking.event.name}}</li>
+            <li>{{booking.timeSlot}}</li>
+            <li>{{booking.event.date}}</li>
+            <li *ngFor="let furniture of booking.bookedFurniture.furniture.furnitureName">{{furniture}}</li>
+            <li>{{booking.bookedFurniture.count}}</li>
+          </ul>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
       </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        <ul>
-
-          <li>{{booking.event.name}}</li>
-          <li>{{booking.timeSlot}}</li>
-          <li>{{booking.event.date}}</li>
-          <li *ngFor="let furniture of booking.bookedFurniture.furniture.furnitureName">{{furniture}}</li>
-          <li>{{booking.bookedFurniture.count}}</li>
-        </ul>
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-
     </div>
   </div>
+
+
+  <input type="button" class="btn expanded" [routerLink]="['/setMyHome/nonadmin']"
+         id="Back" value="Back">
 </div>
-
-
-<input type="button" class="btn expanded" [routerLink]="['/setMyHome/nonadmin']"
-       id="Back" value="Back">
 
