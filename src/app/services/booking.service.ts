@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import {Observable} from 'rxjs';
 import {Booking} from '../models/booking'
 import {Event} from '../models/event';
+import { BookingFurniture } from '../models/BookingFurniture';
 
 
 
@@ -62,6 +63,10 @@ export class BookingService {
     //return this.httpClient.get<Booking[]>('/api/booking/fetch/'+username);
     return this.httpClient.get<Booking[]>('https://fierce-woodland-50366.herokuapp.com/booking/fetch/'+username);
 
+  }
+
+  getFurnitureKeyValuePairs(): Observable<BookingFurniture[]> {
+    return this.httpClient.get<BookingFurniture[]>('https://fierce-woodland-50366.herokuapp.com/bookedFurniture/stock');
   }
 
 

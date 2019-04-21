@@ -43,10 +43,12 @@ export class BookingComponent implements OnInit {
   
   { 
     this.getAllEvents();
+    this.getKeyValuePairs();
     this.getHeavy("Heavy");
     this.getMedium("Medium");
     this.getSmall("Small");
     this.bookinglist = [];
+   
     // this.furnitureKeyValue = [{ furnitureName: "Couch", count: 5 }, { furnitureName: "Table", count: 5}];
 
     this.rForm = this.formBuilder.group(
@@ -72,6 +74,15 @@ export class BookingComponent implements OnInit {
          this.user=user;
         
       }
+
+    })
+  }
+
+  getKeyValuePairs() {
+    this.bookingService.getFurnitureKeyValuePairs().subscribe(r =>
+    {
+      console.log(r);
+      this.furnitureKeyValue = r;
 
     })
   }
@@ -141,7 +152,7 @@ export class BookingComponent implements OnInit {
 
       } else if (this.user.type == "student") {
 
-        let index = this.furnitureKeyValue.indexOf(id);
+        let index = this.furnitureKeyValue.findIndex(x => x.furniture.furnitureId == id);
         if (count > this.furnitureKeyValue[index].count) {
 
           this.bookinglist.push(selectionData);
