@@ -25,7 +25,7 @@
           <td>{{booking.timeSlot}}</td>
           <td>{{booking.person.fname}}</td>
           <td>{{booking.person.type}}</td>
-          <td><input type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="details" value="View Booking" /></td>
+          <td><input type="button" class="btn btn-primary" (click) ="openModal(booking.bookingId)" data-toggle="modal" data-target="#myModal"  value="View Booking" /></td>
         </tr>
       </tbody>
     </table>
@@ -48,13 +48,12 @@
         <div class="modal-body">
           <ul>
 
-            <li>{{booking.event.name}}</li>
-            <li>{{booking.timeSlot}}</li>
-            <li>{{booking.person.fname}}</li>
-            <li>{{booking.person.type}}</li>
-            <li>{{booking.person.type}}</li>
-            <li *ngFor="let furniture of booking.bookedFurniture.furniture.furnitureName">{{furniture}}</li>
-            <li>{{booking.bookedFurniture.count}}</li>
+            <li>{{filteredBookings.event.name}}</li>
+            <li>{{filteredBookings.timeSlot}}</li>
+            <li>{{filteredBookings.event.date}}</li>
+            <!--<li *ngFor="let booking of bookings">{{filteredBookings.bookedFurniture.furniture.furnitureName}} {{booking.bookedFurniture.furniture.count}}</li>-->
+
+
           </ul>
         </div>
 

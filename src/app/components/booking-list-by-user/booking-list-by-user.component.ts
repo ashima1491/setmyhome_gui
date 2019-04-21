@@ -13,7 +13,10 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 export class BookingListByUserComponent implements OnInit {
 
   bookings: Booking[];
-  constructor(private userService:UserServiceService ,private bookingService: BookingService) { }
+  filteredBookings: Booking;
+  constructor(private userService: UserServiceService, private bookingService: BookingService) {
+    this.filteredBookings = null;
+  }
 
   ngOnInit() {
 
@@ -23,6 +26,11 @@ export class BookingListByUserComponent implements OnInit {
       this.bookings = bookings;
       
     });
+  }
+
+  openModal(x) {
+    let index = this.bookings.findIndex(input => input.bookingId == x);
+    this.filteredBookings = this.bookings[index];
   }
 
 }
