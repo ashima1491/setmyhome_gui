@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import {Observable} from 'rxjs';
 import {Booking} from '../models/booking'
+import {Event} from '../models/event';
 
 
 
@@ -16,32 +17,32 @@ export class BookingService {
   createBooking(input)
   {
     //for local
-    // this.httpClient.post('/api/booking/add', input).subscribe(r=>
+    this.httpClient.post('/api/booking/add', input).subscribe(r=>
       
-    //   {
-    //     console.log(r);
-    //     if("true"==r.toString())
-    //     {
-    //       alert("Booking created successfully!");
-    //      // this.router.navigateByUrl("/setMyHome/admin");
-    //     }
+      {
+        console.log(r);
+        if("true"==r.toString())
+        {
+          alert("Booking created successfully!");
+         // this.router.navigateByUrl("/setMyHome/admin");
+        }
         
-    //   });
+      });
 
 
       //for heroku
      
-      this.httpClient.post('https://fierce-woodland-50366.herokuapp.com/booking/add', input).subscribe(r=>
+      // this.httpClient.post('https://fierce-woodland-50366.herokuapp.com/booking/add', input).subscribe(r=>
       
-        {
-          console.log(r);
-          if("true"==r.toString())
-          {
-            alert("Booking created successfully!");
-           // this.router.navigateByUrl("/setMyHome/admin");
-          }
+      //   {
+      //     console.log(r);
+      //     if("true"==r.toString())
+      //     {
+      //       alert("Booking created successfully!");
+      //      // this.router.navigateByUrl("/setMyHome/admin");
+      //     }
           
-        });
+      //   });
   }
 
   getAllEvents():Observable<Event[]>

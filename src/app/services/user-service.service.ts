@@ -7,6 +7,7 @@ import { User } from '../models/user';
 const TOKEN = 'TOKEN';
 const FNAME='FNAME';
 const TYPE='TYPE';
+const ID="ID";
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,7 @@ export class UserServiceService {
     localStorage.setItem(TOKEN, token.emailid);
     localStorage.setItem(FNAME, token.fname);
     localStorage.setItem(TYPE, token.type);
+    localStorage.setItem(ID, token.userId);
     this.subject.next(token);
   }
 

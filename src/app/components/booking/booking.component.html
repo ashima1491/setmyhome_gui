@@ -12,7 +12,7 @@
           <select class="form-control" formControlName="eventName" id="eventName">
 
             <option value="{{defaultEvent}}" [selected]="true">{{defaultEvent}}</option>
-            <option value="{{event.name}}" *ngFor="let event of events">{{event.name}}</option>
+            <option value="{{event.eventId}}" *ngFor="let event of events">{{event.name}}</option>
           </select>
         </div>
 
@@ -23,7 +23,7 @@
             <div class="checkbox">
               <label><input type="checkbox" value={{furniture.furnitureName}} formControlName="heavyFurnitureName" id="heavyFurnitureName">{{furniture.furnitureName}}</label>
             </div>
-             <input type="text" formControlName="heavyCategoryCount" id="heavyCategoryCount" (keyup)="changeEvent($event.target.value, furniture.furnitureName)"/>
+             <input type="text" formControlName="heavyCategoryCount" id="heavyCategoryCount" (keyup)="changeEvent($event.target.value, furniture.furnitureId)"/>
           </div>
 
 

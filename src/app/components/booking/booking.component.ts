@@ -5,8 +5,10 @@ import { Booking } from 'src/app/models/booking';
 import { UserServiceService } from 'src/app/services/user-service.service';
 import { FurnitureService } from 'src/app/services/furniture.service';
 import { Furniture } from 'src/app/models/furniture';
-import { Bookingviewmodel } from 'src/app/models/bookingviewmodel'
-
+import { User } from 'src/app/models/user';
+import { Event } from 'src/app/models/event';
+import {BookingFurniture}  from 'src/app/models/BookingFurniture';
+ 
 
 @Component({
   selector: 'app-booking',
@@ -29,10 +31,11 @@ export class BookingComponent implements OnInit {
   heavyFurniture: Furniture[];
   mediumFurniture: Furniture[];
   smallFurniture: Furniture[];
-  bookinglist: Array<Bookingviewmodel>;
-  furnitureKeyValue: Array<Bookingviewmodel>;
-  userName: string;
-  userType: string;
+  // bookinglist: Array<Bookingviewmodel>;
+  // furnitureKeyValue: Array<Bookingviewmodel>;
+  bookinglist: BookingFurniture[];
+  furnitureKeyValue: BookingFurniture[];
+  user: User;
   
   events: Event[];
   constructor(private formBuilder: FormBuilder, private bookingService: BookingService, private userService: UserServiceService
@@ -44,7 +47,7 @@ export class BookingComponent implements OnInit {
     this.getMedium("Medium");
     this.getSmall("Small");
     this.bookinglist = [];
-    this.furnitureKeyValue = [{ furnitureName: "Couch", count: 5 }, { furnitureName: "Table", count: 5}];
+    // this.furnitureKeyValue = [{ furnitureName: "Couch", count: 5 }, { furnitureName: "Table", count: 5}];
 
     this.rForm = this.formBuilder.group(
       {
@@ -59,6 +62,18 @@ export class BookingComponent implements OnInit {
        
       }
     );
+  }
+
+  ngOnInit() {
+    this.userService.subject.subscribe(user => {
+      console.log(user);
+      if (null != user) {
+        console.log(user.fname);
+         this.user=user;
+        
+      }
+
+    })
   }
 
   getAllEvents()
@@ -101,22 +116,26 @@ export class BookingComponent implements OnInit {
     )
   }
 
-  changeEvent(count, name) {
+  changeEvent(count, id) {
 
-    if (this.userName != null) {
+     this.user.fname="donor";
+    if (this.user.fname != null) {
 
-      let selectionData = {} as Bookingviewmodel;
-      selectionData.furnitureName = name;
+      // let selectionData = {} as Bookingviewmodel;
+      let selectionData = {} as BookingFurniture;
+      selectionData.furniture = {} as Furniture;
+      selectionData.furniture.furnitureId = id;
       selectionData.count = count;
+      this.user.type="donor";
 
-      if (this.userType == "donor") {
+      if (this.user.type == "donor") {
 
         this.bookinglist.push(selectionData);
         console.log(this.bookinglist);
 
-      } else if (this.userType == "student") {
+      } else if (this.user.type == "student") {
 
-        let index = this.furnitureKeyValue.indexOf(name);
+        let index = this.furnitureKeyValue.indexOf(id);
         if (count > this.furnitureKeyValue[index].count) {
 
           this.bookinglist.push(selectionData);
@@ -130,31 +149,23 @@ export class BookingComponent implements OnInit {
     }  
   }
   
-  ngOnInit() {
-    this.userService.subject.subscribe(user => {
-      console.log(user);
-      if (null != user) {
-        this.userName = user.fname;
-        this.userType = user.type;
-      }
-
-    })
-  }
-
+ 
   createBooking(input)
   {
 
     
-    console.log(this.rForm.controls['heavyFurnitureName'].value);
-    console.log(this.rForm.get('heavyFurnitureName').value);
- 
-    var booking: Booking;
-    booking = input;
-    booking.bookingviewmodel = this.bookinglist;
+
+    let booking=   {} as Booking ;
+    booking.event = {} as Event;
+    booking.person = {} as User;
+    booking.event.eventId=input.eventName;
+    booking.person.userId= "1";
+    booking.timeSlot= input.timeSlot;
+    booking.bookedFurniture = this.bookinglist;
     console.log(booking);
 
-    booking.userName = "donor";
-    booking.userType = "donor";
+    // booking.person.fname = "donor";
+    // booking.person.type = "donor";
 
       this.bookingService.createBooking(booking);
       this.rForm.reset();
