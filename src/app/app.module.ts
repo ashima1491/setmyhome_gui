@@ -47,7 +47,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     TestimonialComponent,
     BlogComponent,
     AddfurnitureComponent,
-    GalleryComponent
+    GalleryComponent,
   ],
   imports: [
     BrowserModule,
