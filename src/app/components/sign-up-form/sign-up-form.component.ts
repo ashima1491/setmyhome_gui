@@ -41,8 +41,14 @@ export class SignUpFormComponent implements OnInit {
 
   signUp(input)
   {
-    console.log(input);
-    this.signUpService.signUp(input);
-    this.rForm.reset();
+
+    if (this.rForm.get('password').value == this.rForm.get('cpassword').value) {
+      console.log(input);
+      this.signUpService.signUp(input);
+      this.rForm.reset();
+    } else {
+      alert("Passwords do not match");
+    }
+  
   }
 }
