@@ -24,7 +24,7 @@ export class AddfurnitureComponent implements OnInit {
       {
        
         'category': ["Heavy",[Validators.required]],
-        'furnitureName': [null,[Validators.required]]
+        'furnitureName': [null,[Validators.required, Validators.minLength(2), Validators.maxLength(30)]]
         
        
       }
@@ -40,6 +40,7 @@ export class AddfurnitureComponent implements OnInit {
     console.log(input);
     this.furnitureService.addFurniture(input);
     this.rForm.reset();
+    this.rForm.get('category').setValue("Heavy");
   
   }
 

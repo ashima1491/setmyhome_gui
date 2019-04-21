@@ -11,20 +11,27 @@
               <label class="control-label">Category</label>
               <select class="form-control" formControlName="category" id="category">
                   
-                  <option value="Heavy"  [selected]="true">Heavy</option>
+                <option value="Heavy"  [selected]="true">Heavy</option>
                 <option value="Medium">Medium</option>
-                   <option value="Small">Small</option>
+                <option value="Small">Small</option>
               </select>
             </div>
   
             <div class="form-group required">
               <label class="control-label">Furniture Name</label>
               <input type="text" formControlName="furnitureName" id="furnitureName" class="form-control">
-              <!-- <div class="alert alert-danger" *ngIf="!rForm.controls['hcat'].valid && rForm.controls['hcat'].touched">
-                <div *ngIf="rForm.controls['hcat'].errors.required">
-                  Last name is required
+              <div class="alert alert-danger" *ngIf="!rForm.controls['furnitureName'].valid &&
+                 rForm.controls['furnitureName'].touched">
+                <div *ngIf="rForm.controls['furnitureName'].errors.required">
+                  Furniture name is required
                 </div>
-              </div> -->
+                <div *ngIf="rForm.controls['furnitureName'].errors.maxlength">
+                  Furniture name cannot be more than 30 characters
+                </div>
+                <div *ngIf="rForm.controls['furnitureName'].errors.minlength">
+                  Furniture name cannot be less than 2 characters
+                </div>
+              </div>
             </div>
            
             <div class="form-group">

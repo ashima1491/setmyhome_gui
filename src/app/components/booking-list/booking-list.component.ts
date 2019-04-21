@@ -11,22 +11,22 @@ export class BookingListComponent implements OnInit {
 
   bookings: Booking[];
   // add this config
-  settings = {
-    columns: {
-      eventName: {
-        title: 'Event Name'
-      },
-      timeSlot: {
-        title: 'Time Slot'
-      },
-      userName: {
-        title: 'User Name'
-      },
-      userType: {
-        title: 'User Type'
-      }
-    }
-  };
+  // settings = {
+  //   columns: {
+  //     eventName: {
+  //       title: 'Event Name'
+  //     },
+  //     timeSlot: {
+  //       title: 'Time Slot'
+  //     },
+  //     userName: {
+  //       title: 'User Name'
+  //     },
+  //     userType: {
+  //       title: 'User Type'
+  //     }
+  //   }
+  // };
   constructor( private bookingService: BookingService) { }
 
   ngOnInit() {
