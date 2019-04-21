@@ -47,14 +47,7 @@
         <!-- Modal body -->
         <div class="modal-body">
           <ul>
-
-            <li>{{booking.event.name}}</li>
-            <li>{{booking.timeSlot}}</li>
-            <li>{{booking.person.fname}}</li>
-            <li>{{booking.person.type}}</li>
-            <li>{{booking.person.type}}</li>
-            <li *ngFor="let furniture of booking.bookedFurniture.furniture.furnitureName">{{furniture}}</li>
-            <li>{{booking.bookedFurniture.count}}</li>
+            <li *ngFor="let booking of bookings">{{booking.bookedFurniture.furniture.furnitureName}} {{booking.bookedFurniture.furniture.count}}</li>
           </ul>
         </div>
 

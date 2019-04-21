@@ -37,21 +37,15 @@
         <!-- Modal body -->
         <div class="modal-body">
           <ul>
-
-            <li>{{booking.event.name}}</li>
-            <li>{{booking.timeSlot}}</li>
-            <li>{{booking.event.date}}</li>
-            <li *ngFor="let furniture of booking.bookedFurniture.furniture.furnitureName">{{furniture}}</li>
-            <li>{{booking.bookedFurniture.count}}</li>
+            <li *ngFor="let booking of bookings">{{booking.bookedFurniture.furniture.furnitureName}} {{booking.bookedFurniture.furniture.count}}</li>
           </ul>
-        </div>
 
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
 
-      </div>
+        </div>
     </div>
   </div>
 
