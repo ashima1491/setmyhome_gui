@@ -121,7 +121,13 @@ export class BookingComponent implements OnInit {
      this.user.fname="donor";
     if (this.user.fname != null) {
 
-      // let selectionData = {} as Bookingviewmodel;
+
+      let duplicateIndex = this.bookinglist.findIndex(x => x.furniture.furnitureId == id);
+
+      if (duplicateIndex != -1) {
+        this.bookinglist.splice(duplicateIndex, 1);
+      }
+
       let selectionData = {} as BookingFurniture;
       selectionData.furniture = {} as Furniture;
       selectionData.furniture.furnitureId = id;
