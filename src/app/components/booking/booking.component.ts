@@ -8,6 +8,7 @@ import { Furniture } from 'src/app/models/furniture';
 import { User } from 'src/app/models/user';
 import { Event } from 'src/app/models/event';
 import {BookingFurniture}  from 'src/app/models/BookingFurniture';
+import { BookingInput } from 'src/app/models/booking-input';
  
 
 @Component({
@@ -27,13 +28,14 @@ export class BookingComponent implements OnInit {
   lowCategoryCount: number;
   timeSlot: string;
   defaultTimeSlot: string="8.00 a.m. - 9.00 a.m.";
-  defaultEvent: string = "GiveAway Event on May 11";
+  defaultEvent: number;
   heavyFurniture: Furniture[];
   mediumFurniture: Furniture[];
   smallFurniture: Furniture[];
   // bookinglist: Array<Bookingviewmodel>;
   // furnitureKeyValue: Array<Bookingviewmodel>;
-  bookinglist: BookingFurniture[];
+  // bookinglist: BookingFurniture[];
+  bookinglist: Furniture[];
   furnitureKeyValue: BookingFurniture[];
   username: string;
   isAdmin: boolean;
@@ -58,9 +60,9 @@ export class BookingComponent implements OnInit {
     this.rForm = this.formBuilder.group(
       {
         'eventName': [this.defaultEvent],
-        'heavyCategoryCount': [],
-        'mediumCategoryCount': [],
-        'lowCategoryCount': [],
+        'heavyCategoryCount': [0],
+        'mediumCategoryCount': [0],
+        'lowCategoryCount': [0],
         'heavyFurnitureName': [null],
         'mediumFurnitureName': [null],
         'smallFurnitureName': [null],
@@ -106,10 +108,14 @@ export class BookingComponent implements OnInit {
   {
     this.bookingService.getAllEvents().subscribe(events=>
       {
-        console.log(events);
+       // console.log(events);
         this.events=events;
-
+        console.log(events[0]);
+        this.defaultEvent=events[0].eventId;
+        console.log(this.defaultEvent);
       }
+
+      
     )
   }
 
@@ -147,34 +153,41 @@ export class BookingComponent implements OnInit {
   
       console.log(this.type);
 
-      let duplicateIndex = this.bookinglist.findIndex(x => x.furniture.furnitureId == id);
+      // let duplicateIndex = this.bookinglist.findIndex(x => x.furniture.furnitureId == id);
+      let duplicateIndex = this.bookinglist.findIndex(x => x.furnitureId == id);
+
 
       if (duplicateIndex != -1) {
         this.bookinglist.splice(duplicateIndex, 1);
       }
 
-      let selectionData = {} as BookingFurniture;
-      selectionData.furniture = {} as Furniture;
-      selectionData.furniture.furnitureId = id;
+      // let selectionData = {} as BookingFurniture;
+      // selectionData.furniture = {} as Furniture;
+      // selectionData.furniture.furnitureId = id;
+      let selectionData = {} as Furniture;
+     
+      selectionData.furnitureId = id;
       selectionData.count = count;
     //  this.user.type="donor";
 
       if (this.type == "donor") {
 
         this.bookinglist.push(selectionData);
+      // this.bookinglist=selectionData;
         console.log(this.bookinglist);
 
       } else if (this.type == "student") {
 
         let index = this.furnitureKeyValue.findIndex(x => x.furniture.furnitureId == id);
-        if (count > this.furnitureKeyValue[index].count) {
+        console.log("inside");
+        if (count <= this.furnitureKeyValue[index].count) {
 
           this.bookinglist.push(selectionData);
           console.log(this.bookinglist);
 
         } else {
           let stock = this.furnitureKeyValue[index].count - count;
-          alert("We currently have " + stock + "items of this furniture available");
+          alert("We currently have " + stock + " items of this furniture left");
         }
       }
     
@@ -186,13 +199,17 @@ export class BookingComponent implements OnInit {
 
     
 
-    let booking=   {} as Booking ;
-    booking.event = {} as Event;
-    booking.person = {} as User;
-    booking.event.eventId=input.eventName;
-    booking.person.userId= this.userId;
-    booking.timeSlot= input.timeSlot;
-    booking.bookedFurniture = this.bookinglist;
+    let booking=   {} as BookingInput ;
+    booking.eventId=input.eventName;
+    booking.personId=this.userId;
+    booking.timeSlot=input.timeSlot;
+    booking.furnitureList= this.bookinglist;
+    // booking.event = {} as Event;
+    // booking.person = {} as User;
+    // booking.event.eventId=input.eventName;
+    // booking.person.userId= this.userId;
+    // booking.timeSlot= input.timeSlot;
+    // booking.bookedFurniture = this.bookinglist;
     console.log(booking);
 
     // booking.person.fname = "donor";

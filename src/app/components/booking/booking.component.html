@@ -11,8 +11,8 @@
           <label class="control-label">Events</label>
           <select class="form-control" formControlName="eventName" id="eventName">
 
-            <option value="{{defaultEvent}}" [selected]="true">{{defaultEvent}}</option>
-            <option value="{{event.eventId}}" *ngFor="let event of events">{{event.name}}</option>
+            <option value="{{event.eventId}}" *ngFor="let event of events" 
+            [selected]=" event.eventId == defaultEvent ">{{event.name}}</option>
           </select>
         </div>
 
@@ -40,7 +40,7 @@
             <div class="checkbox">
               <label><input type="checkbox" value={{medFurniture.furnitureName}} formControlName="mediumFurnitureName" id="mediumFurnitureName"> {{medFurniture.furnitureName}}</label>
             </div>
-            <input type="text" formControlName="mediumCategoryCount" id="mediumCategoryCount" (keyup)="changeEvent($event.target.value, medFurniture.furnitureName)"/>
+            <input type="text" formControlName="mediumCategoryCount" id="mediumCategoryCount" (keyup)="changeEvent($event.target.value, medFurniture.furnitureId)"/>
           </div>
 
           <!-- <div class="alert alert-danger" *ngIf="!rForm.controls['hcat'].valid && rForm.controls['hcat'].touched">
@@ -56,7 +56,7 @@
               <div class="checkbox">
                 <label><input type="checkbox" value={{smFurniture.furnitureName}} formControlName="smallFurnitureName" id="smallFurnitureName"> {{smFurniture.furnitureName}}</label>
               </div>
-              <input type="text" formControlName="lowCategoryCount" id="lowCategoryCount" (keyup)="changeEvent($event.target.value, smFurniture.furnitureName)" />
+              <input type="text" formControlName="lowCategoryCount" id="lowCategoryCount" (keyup)="changeEvent($event.target.value, smFurniture.furnitureId)" />
             </div>
 
             <!-- <div class="alert alert-danger" *ngIf="!rForm.controls['hcat'].valid && rForm.controls['hcat'].touched">
@@ -71,10 +71,10 @@
             <select class="form-control" formControlName="timeSlot" id="timeSlot">
               <option value="{{defaultTimeSlot}}" [selected]="true">{{defaultTimeSlot}}</option>
               <option value="9.00 a.m- 10.00 a.m.">9.00 a.m. - 10.00 a.m.</option>
-              <option value="9.00 a.m- 10.00 a.m.">10.00 a.m. - 11.00 a.m.</option>
-              <option value="9.00 a.m- 10.00 a.m.">11.00 a.m. - 12.00 p.m.</option>
-              <option value="9.00 a.m- 10.00 a.m.">1.00 a.m. - 2.00 p.m.</option>
-              <option value="9.00 a.m- 10.00 a.m.">2.00 a.m. - 3.00 p.m.</option>
+              <option value="10.00 a.m. - 11.00 a.m.">10.00 a.m. - 11.00 a.m.</option>
+              <option value="11.00 a.m. - 12.00 p.m.">11.00 a.m. - 12.00 p.m.</option>
+              <option value="1.00 a.m. - 2.00 p.m.">1.00 a.m. - 2.00 p.m.</option>
+              <option value="2.00 a.m. - 3.00 p.m.">2.00 a.m. - 3.00 p.m.</option>
             </select>
           </div>
 
