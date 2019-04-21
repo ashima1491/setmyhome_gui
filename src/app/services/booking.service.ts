@@ -48,25 +48,28 @@ export class BookingService {
 
   getAllEvents():Observable<Event[]>
   {
-    //return this.httpClient.get<Event[]>('/api/event/all');
-    return this.httpClient.get<Event[]>('https://fierce-woodland-50366.herokuapp.com/event/all');
+    return this.httpClient.get<Event[]>('/api/event/all');
+    //return this.httpClient.get<Event[]>('https://fierce-woodland-50366.herokuapp.com/event/all');
   }
 
   getAllBookings(): Observable<Booking[]>
   {
-    //return this.httpClient.get<Booking[]>('/api/booking/fetchAll');
-    return this.httpClient.get<Booking[]>('https://fierce-woodland-50366.herokuapp.com/booking/fetchAll');
+    return this.httpClient.get<Booking[]>('/api/booking/fetchAll');
+    //return this.httpClient.get<Booking[]>('https://fierce-woodland-50366.herokuapp.com/booking/fetchAll');
 
   }
-  getAllBookingsByUser(username): Observable<Booking[]>
+  getAllBookingsByUser(userId): Observable<Booking[]>
   {
-    //return this.httpClient.get<Booking[]>('/api/booking/fetch/'+username);
-    return this.httpClient.get<Booking[]>('https://fierce-woodland-50366.herokuapp.com/booking/fetch/'+username);
+    return this.httpClient.get<Booking[]>('/api/booking/fetch/'+userId);
+    //return this.httpClient.get<Booking[]>('https://fierce-woodland-50366.herokuapp.com/booking/fetch/'+username);
 
   }
 
   getFurnitureKeyValuePairs(): Observable<BookingFurniture[]> {
-    return this.httpClient.get<BookingFurniture[]>('https://fierce-woodland-50366.herokuapp.com/bookedFurniture/stock');
+    //return this.httpClient.get<BookingFurniture[]>('https://fierce-woodland-50366.herokuapp.com/bookedFurniture/stock');
+    return this.httpClient.get<BookingFurniture[]>('/api/bookedFurniture/stock');
+
+  
   }
 
 

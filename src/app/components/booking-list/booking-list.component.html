@@ -21,10 +21,10 @@
       </thead>
       <tbody>
         <tr *ngFor="let booking of bookings">
-          <th scope="row">{{booking.eventName}}</th>
+          <th scope="row">{{booking.event.name}}</th>
           <td>{{booking.timeSlot}}</td>
-          <td>{{booking.userName}}</td>
-          <td>{{booking.userType}}</td>
+          <td>{{booking.person.fname}}</td>
+          <td>{{booking.person.type}}</td>
         
         </tr>
       </tbody>

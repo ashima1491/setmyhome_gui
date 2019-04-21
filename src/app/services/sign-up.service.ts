@@ -22,25 +22,38 @@ export class SignUpService {
     userInput= user;
     console.log(userInput);
      //for heroku
-    this.httpVar.post('https://fierce-woodland-50366.herokuapp.com/login/add', userInput).subscribe(r=> 
+    // this.httpVar.post('https://fierce-woodland-50366.herokuapp.com/login/add',
+    // userInput).subscribe(r=> 
+    //   {
+    //     if(r.toString ()=="true")
+    //     {
+    //       alert("Successful Sign Up!");
+    //       this.router.navigateByUrl("/setMyHome/login");
+    //     }
+    //     else if (r.toString()=="A user with this email already exists!")
+    //     {
+    //       alert("A user with this email already exists!");
+    //     }
+        
+    //   }
+    //  );
+
+    // for local
+     this.httpVar.post('/api/login/add', userInput).subscribe(r=> 
       {
-        if(r.toString ()=="true")
+          if(r.toString ()=="true")
         {
           alert("Successful Sign Up!");
           this.router.navigateByUrl("/setMyHome/login");
         }
+        else if (r.toString()=="A user with this email already exists!")
+        {
+          alert("A user with this email already exists!");
+        }
         
       }
      );
-
-    // for local
-    //  this.httpVar.post('/api/login/add', userInput).subscribe(r=> 
-    //   {
-    //     if(r.toString ()=="true")
-    //     alert("Successful Sign Up!");
-    //   }
-    //  );
-
+    
   }
 
   login(user):Observable<User>
@@ -49,10 +62,10 @@ export class SignUpService {
     userInput= user;
    // console.log(userInput);
       //for heroku
-    return this.httpVar.post<User>('https://fierce-woodland-50366.herokuapp.com/login/authenticate', userInput);
+   // return this.httpVar.post<User>('https://fierce-woodland-50366.herokuapp.com/login/authenticate', userInput);
       
       //for local
-      //return this.httpVar.post<User>('/api/login/authenticate', userInput);
+      return this.httpVar.post<User>('/api/login/authenticate', userInput);
 
 }
 
@@ -60,10 +73,10 @@ export class SignUpService {
   {
     
       //for heroku
-    return this.httpVar.get<User[]>('https://fierce-woodland-50366.herokuapp.com/login/all');
+    //return this.httpVar.get<User[]>('https://fierce-woodland-50366.herokuapp.com/login/all');
 
       //for local
-      //return this.httpVar.get<User[]>('/api/login/all');
+      return this.httpVar.get<User[]>('/api/login/all');
 
   }
 }

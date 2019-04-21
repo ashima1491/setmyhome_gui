@@ -5,18 +5,18 @@
     <tr>
       <th  scope="col">Event Name</th>
       <th  scope="col">Time Slot</th>
-      <th  scope="col">Heavy Products</th>
-      <th  scope="col">Medium Products</th>
-      <th  scope="col">Low Products</th>
+      <th  scope="col">Date</th>
+      <!-- <th  scope="col">Medium Products</th>
+      <th  scope="col">Low Products</th> -->
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let booking of bookings">
-      <th scope="row">{{booking.eventName}}</th>
+      <th scope="row">{{booking.event.name}}</th>
       <td>{{booking.timeSlot}}</td>
-      <td>{{booking.heavyFurnitureName}}&nbsp;{{booking.heavyCategoryCount}}</td>
-      <td>{{booking.mediumFurnitureName}}&nbsp;{{booking.mediumCategoryCount}}</td>
-      <td>{{booking.smallFurnitureName}}&nbsp;{{booking.lowCategoryCount}}</td>
+      <td>{{booking.event.date}}</td>
+      <!-- <td>{{booking.mediumFurnitureName}}&nbsp;{{booking.mediumCategoryCount}}</td>
+      <td>{{booking.smallFurnitureName}}&nbsp;{{booking.lowCategoryCount}}</td> -->
     </tr>
   </tbody>
 </table>

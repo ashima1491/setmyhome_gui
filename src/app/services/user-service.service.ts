@@ -48,7 +48,14 @@ export class UserServiceService {
   {
     return localStorage.getItem(FNAME);
   }
-
+  getUserType()
+  {
+    return localStorage.getItem(TYPE);
+  }
+  getUserId()
+  {
+    return localStorage.getItem(ID);
+  }
   logout()
   {
     localStorage.clear();

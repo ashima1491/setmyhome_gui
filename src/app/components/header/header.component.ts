@@ -10,6 +10,8 @@ export class HeaderComponent implements OnInit {
 
   username: string;
   isAdmin: boolean;
+  userId: string;
+ 
 
   constructor(private userService: UserServiceService) { }
 
@@ -21,12 +23,14 @@ export class HeaderComponent implements OnInit {
          
           this.username= null==user?"": user.fname;
           this.isAdmin= null==user? false:user.type=='admin';
+          this.userId= null==user?"": user.userId;
       });
  
     if(this.userService.isLogged())
     {
       this.username= this.userService.getFname();
       this.isAdmin= this.userService.isAdmin();
+      this.userId= this.userService.getUserId();
 
     }
 

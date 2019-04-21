@@ -35,7 +35,11 @@ export class BookingComponent implements OnInit {
   // furnitureKeyValue: Array<Bookingviewmodel>;
   bookinglist: BookingFurniture[];
   furnitureKeyValue: BookingFurniture[];
-  user: User;
+  username: string;
+  isAdmin: boolean;
+  userId: string;
+  type: string;
+
   
   events: Event[];
   constructor(private formBuilder: FormBuilder, private bookingService: BookingService, private userService: UserServiceService
@@ -67,15 +71,26 @@ export class BookingComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.subject.subscribe(user => {
-      console.log(user);
-      if (null != user) {
-        console.log(user.fname);
-         this.user=user;
-        
-      }
+    this.userService.subject.subscribe(user=>
+      {
+        console.log(user);
+         
+          
+        this.username= null==user?"": user.fname;
+        this.isAdmin= null==user? false:user.type=='admin';
+        this.userId= null==user?"": user.userId;
+        this.type=null==user?"": user.type;
+      });
+ 
+    if(this.userService.isLogged())
+    {
+      
+      this.username= this.userService.getFname();
+      this.isAdmin= this.userService.isAdmin();
+      this.userId= this.userService.getUserId();
+      this.type= this.userService.getUserType();
 
-    })
+    }
   }
 
   getKeyValuePairs() {
@@ -129,9 +144,8 @@ export class BookingComponent implements OnInit {
 
   changeEvent(count, id) {
 
-     this.user.fname="donor";
-    if (this.user.fname != null) {
-
+  
+      console.log(this.type);
 
       let duplicateIndex = this.bookinglist.findIndex(x => x.furniture.furnitureId == id);
 
@@ -143,14 +157,14 @@ export class BookingComponent implements OnInit {
       selectionData.furniture = {} as Furniture;
       selectionData.furniture.furnitureId = id;
       selectionData.count = count;
-      this.user.type="donor";
+    //  this.user.type="donor";
 
-      if (this.user.type == "donor") {
+      if (this.type == "donor") {
 
         this.bookinglist.push(selectionData);
         console.log(this.bookinglist);
 
-      } else if (this.user.type == "student") {
+      } else if (this.type == "student") {
 
         let index = this.furnitureKeyValue.findIndex(x => x.furniture.furnitureId == id);
         if (count > this.furnitureKeyValue[index].count) {
@@ -163,7 +177,7 @@ export class BookingComponent implements OnInit {
           alert("We currently have " + stock + "items of this furniture available");
         }
       }
-    }  
+    
   }
   
  
@@ -176,7 +190,7 @@ export class BookingComponent implements OnInit {
     booking.event = {} as Event;
     booking.person = {} as User;
     booking.event.eventId=input.eventName;
-    booking.person.userId= "1";
+    booking.person.userId= this.userId;
     booking.timeSlot= input.timeSlot;
     booking.bookedFurniture = this.bookinglist;
     console.log(booking);

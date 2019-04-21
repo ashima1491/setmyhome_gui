@@ -17,8 +17,8 @@ export class BookingListByUserComponent implements OnInit {
 
   ngOnInit() {
 
-    var username=this.userService.getFname();
-    this.bookingService.getAllBookingsByUser(username).subscribe(bookings => {
+    var userId=this.userService.getUserId();
+    this.bookingService.getAllBookingsByUser(userId).subscribe(bookings => {
       console.log(bookings);
       this.bookings = bookings;
       
