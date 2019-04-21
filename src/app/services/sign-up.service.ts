@@ -20,7 +20,7 @@ export class SignUpService {
   {
     var userInput :User ={} as any;
     userInput= user;
-    console.log(userInput);
+    //console.log(userInput);
      //for heroku
     // this.httpVar.post('https://fierce-woodland-50366.herokuapp.com/login/add',
     // userInput).subscribe(r=> 
@@ -41,12 +41,13 @@ export class SignUpService {
     // for local
      this.httpVar.post('/api/login/add', userInput).subscribe(r=> 
       {
+        console.log(r);
           if(r.toString ()=="true")
         {
           alert("Successful Sign Up!");
           this.router.navigateByUrl("/setMyHome/login");
         }
-        else if (r.toString()=="A user with this email already exists!")
+        else if (r.toString()=="false")
         {
           alert("A user with this email already exists!");
         }
