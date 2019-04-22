@@ -4,12 +4,8 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\addfurniture",
-    "\\src\\app\\components\\booking",
-    "\\src\\app\\components\\booking-list-by-user",
-    "\\src\\app\\models",
-    "\\src\\app\\services"
+    "\\src\\assets\\images\\gallery"
   ],
-  "SelectedNode": "\\src\\app\\components\\booking-list-by-user\\booking-list-by-user.component.ts",
+  "SelectedNode": "\\src\\app\\components\\footer",
   "PreviewInSolutionExplorer": false
 }
