@@ -12,17 +12,17 @@
 	right:0;
 	top:0;
 	bottom:0;
-	z-index: 2;
+	z-index: 2;		/*2 specifies the stack order of .banner_box in .banner_cont*/
 }
 
 .banner_cont .jumbotron{
 	background: rgba(0,0,0,.7);
 	position: absolute;
-	top:50%;
-	left:50%;
-	transform: translate(-50%, -50%);
+	top:50%;	/*specified in percentages to make it responsive*/
+	left:50%;	
+	transform: translate(-50%, -50%);   /*moving the element on x-axis and y-axis*/
 	text-align: center;	
-	color:#fff;
+	color:#fff;			/*RGB value is (255,255,255)*/
 	/*border: solid 5px #FF726A;*/
 	
 }
@@ -32,14 +32,14 @@
 
 
 .myHomeCarousel {
-	margin-top: 2%;
+	margin-top: 2%;		/*specified in percentages to make it responsive*/
 
 }
 .myhomeheader {
 	font-family: 'Indie Flower', cursive;  /* font family for navigation bar  */
-	margin-top: 2%;
+	margin-top: 2%;		/*specified in percentages to make it responsive*/
 	letter-spacing: 1px;
-	line-height: 1.44;
+	line-height: 1.44;		/*line-height is proportional to font-size*/
     font-weight: bold;
     
 }
@@ -50,7 +50,7 @@
 .stud_count{
 	background: royalblue !important;
 	display: inline-block;
-	color:#fff;
+	color:#fff;  			/*RGB value is (255,255,255)*/
 	border-radius: 5px;
 }
 .myHomeSection1 .stud_count h2{
@@ -65,8 +65,8 @@
 }
 
 .myCol1Section1 {
-	padding-top: 5%;
-	padding-bottom: 5%;
+	padding-top: 5%;		/*specified in percentages to make it responsive*/
+	padding-bottom: 5%;		
 }
 
 .myCol2Section1 {
@@ -78,7 +78,7 @@ padding-bottom: 5%;
 }
 .journeyPara
 {
-padding-bottom: 5%;
+padding-bottom: 5%;		/*specified in percentages to make it responsive*/
 }
 
 
@@ -89,18 +89,18 @@ padding-bottom: 5%;
 }
 
 .myCol1Section2 {
-	padding-top: 5%;
+	padding-top: 5%;		
 	padding-bottom: 3%;
 }
 
 .sec2row2 {
-	padding-left: 10%;
-	padding-right: 10%;
+	padding-left: 10%;		/*specified in percentages to make it responsive*/
+	padding-right: 10%;		
 }
 
 .valueHeader {
 	padding-top: 5%; font-weight : bold;
-	padding-bottom: 5%;
+	padding-bottom: 5%;		/*specified in percentages to make it responsive*/
 	font-weight: bold;
 }
 
@@ -112,20 +112,21 @@ padding-bottom: 5%;
 }
 
 /*  media-queries */
+
 @media (max-width:1024px){
 	.banner_cont{
-		height:auto;
+		height:auto;		/*.banner_cont element will be automatically adjusted to be displayed perfectly*/
 	}
 	.banner_cont .jumbotron h1{
 		font-size:30px;
 	}
 	.carousel-inner{
-		height:auto;
+		height:auto;		/*.carousel-inner element will be automatically adjusted to be displayed perfectly*/
 	}
 }
 @media (max-width:480px){
 	.banner_cont .jumbotron{
-		width:90%;
+		width:90%;		/*specified in percentages to make it responsive*/
 		padding: 0px 15px;
 	}
 	.banner_cont .jumbotron h1{
