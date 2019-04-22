@@ -47,6 +47,9 @@ input {
   margin: 2%;
 }
 
+#message{
+  height: 15vh;
+}
 /* Button styles*/
 .divlogin .Contactbtn {
   background-color: #4189CC;
@@ -54,11 +57,11 @@ input {
   font-size: 20px;
   color: white;
   padding: 2%;
-  margin-left:2%;
+  margin-left: 2%;
 }
 
 
-/*Media queries for responsive web page*/
+/*Media queries for small devices whose max width is 768 px*/
 @media screen and (max-width: 768px) {
 
   /*set display block when page is small*/
@@ -86,10 +89,9 @@ input {
     text-align: center;
     overflow: hidden;
   }
-}
 
-
-@media screen and (max-width: 480px){
-  
+  #message {
+    height: 10vh;
+  }
 }
 

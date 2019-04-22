@@ -4,8 +4,11 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\assets\\images\\gallery"
+    "\\src\\app\\components\\admin-dashboard",
+    "\\src\\app\\components\\contact-us",
+    "\\src\\app\\components\\sign-up-form",
+    "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\components\\footer",
+  "SelectedNode": "\\src\\app\\components\\admin-dashboard\\admin-dashboard.component.html",
   "PreviewInSolutionExplorer": false
 }
