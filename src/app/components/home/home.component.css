@@ -1,10 +1,10 @@
 .wrapper{
-	background:#fff;
-	overflow-x: hidden;
+	background:#fff; /* the main outermost div */
+	overflow-x: hidden; 
 }
 .banner_cont {
 	position:relative;
-	height: 100vh;
+	height: 100vh; /* height in vh for responsiveness */
 }
 .banner_cont .banner_box{
 	position:absolute;
@@ -27,15 +27,16 @@
 	
 }
 .carousel-inner{
-	height: 100vh;
+	height: 100vh; /* height in vh for responsiveness */
 }
+
 
 .myHomeCarousel {
 	margin-top: 2%;
 
 }
 .myhomeheader {
-	font-family: 'Indie Flower', cursive;
+	font-family: 'Indie Flower', cursive;  /* font family for navigation bar  */
 	margin-top: 2%;
 	letter-spacing: 1px;
 	line-height: 1.44;
@@ -110,10 +111,7 @@ padding-bottom: 5%;
 	height: auto;
 }
 
-
-
-
-
+/*  media-queries */
 @media (max-width:1024px){
 	.banner_cont{
 		height:auto;

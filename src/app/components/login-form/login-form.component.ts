@@ -42,36 +42,22 @@ export class LoginFormComponent implements OnInit {
   {
     //console.log(input);
     this.signUpService.login(input).subscribe( u=> 
-      
-      
       {
         console.log(u);
         if(null!=u)
         {
-          
           this.userService.setToken(u);
-          //this.userService.setFname(u.fname);
-         
+          /* if user is admin type, redirect to admin dashboard*/
           if(u.type=='admin')
           {
-            //console.log("navigating");
-            //this.userService.setAdminFlag();
             this.router.navigateByUrl('/setMyHome/admin');
-
           }
+          /* if user is not an admin type, redirect to non admin dashboard*/
           else
           {
             this.router.navigateByUrl('/setMyHome/nonadmin');
-
           }
-
-          //if(u.type=='student')
-          // this.router.navigateByUrl('/setMyHome/admin');
-
-          //if(u.type=='donor')
-          // this.router.navigateByUrl('/setMyHome/admin');
         }
-
         else{
           alert("Invalid user credentials!");
         }

@@ -1,18 +1,12 @@
-
+<!-- sign up page -->
 <div class="dashboard_cont mt-5 pt-5" >
     <form [formGroup]="rForm" (ngSubmit)="signUp(rForm.value)" >
-        <div class="row divlogin">
-            
-         
-              
+        <div class="row divlogin">  
+          <!-- sign up form starts-->
+
           <div class="col-sm-6">
-         
           <div id="accntform">
               <h3 class="blueTheme">Get ready to set your house!</h3> 
-              
-              <!-- <p id="passinstruct">Password must be 8-13 characters long. Your Password Must have at least 1 lowercase alphabet.
-                  Your Password Must have at least 1 uppercase alphabet. Your Password Must have at least 1 number.</p>
-          -->
                   <div class="form-group required">
                     <label class="control-label">First Name</label>
                     <input type="text" formControlName="fname" id="fname" pattern="[a-zA-Z]*" class="form-control" placeholder="Your first name">
@@ -61,20 +55,6 @@
                       </div>
                     </div>
                   </div>
-        
-                  <!-- <div class="form-group required">
-                    <label class="control-label">Phone Number</label>
-                    <input type="text" formControlName="phonenumber" id="phonenumber" class="form-control">
-                    <div class="alert alert-danger" *ngIf="!rForm.controls['phonenumber'].valid && rForm.controls['phonenumber'].touched">
-                      <div *ngIf="rForm.controls['phonenumber'].errors.required">
-                        Phone Number is required
-                      </div>
-                      <div *ngIf="rForm.controls['phonenumber'].errors.maxlength">
-                        Phone Number cannot be more than 10 characters 
-                      </div>
-                    </div>
-                  </div> -->
-        
                   <div class="form-group required">
                     <label class="control-label">Password</label>
                     <input type="password" formControlName="password" id="password" class="form-control" placeholder="Atleast 8 character password with one letter and number">
@@ -90,7 +70,6 @@
                      </div>
                     </div>
                   </div>
-        
                   <div class="form-group required">
                     <label class="control-label">Confirm Password</label>
                     <input type="password" formControlName="cpassword" id="cpassword" class="form-control" placeholder="Confirm your password">
@@ -139,11 +118,14 @@
               
              
           </div>   
+          <!-- sign up form ends-->
+          <!-- mascot side section starts-->
           <div class="col-sm-6 divmascot" >   
         
               <img src="../../../assets/images/signUpBg.jpg" alt="mascot">    
                   </div> 
           </div> 
+          <!-- mascot side section ends-->
           </form>
 </div>
 

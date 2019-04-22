@@ -62,8 +62,9 @@ export class SignUpService {
     var userInput :User ={} as any;
     userInput= user;
    // console.log(userInput);
-      //for heroku
-    return this.httpVar.post<User>('https://fierce-woodland-50366.herokuapp.com/login/authenticate', userInput);
+   //for heroku
+    return this.httpVar.post<User>('https://fierce-woodland-50366.herokuapp.com/login/authenticate', 
+    userInput);
       
       //for local
     //  return this.httpVar.post<User>('/api/login/authenticate', userInput);

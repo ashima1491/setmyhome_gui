@@ -1,7 +1,3 @@
-/*login page styles............
-................................. media query, have an account to be added*/
-
-
 
 .divlogin{
     margin-top: 5%;
@@ -10,15 +6,13 @@
 }
 
 .divmascot img{
-    /* margin-left: 40%; */
+   
     padding: 0 0 2.5rem 2.5rem;
 
 }
 
 .divlogin input{
     display: block;
-    /* padding: 2%;
-    margin: 4%;*/
     
 }
 
@@ -70,13 +64,9 @@
     margin: 0 auto;
 }
 
-
-
-
 #passinstruct{
     padding: 2%;
     margin: 4%;
-    /* width: 65%; */
     background-color: lightgreen;
   
    
@@ -89,7 +79,6 @@
 
   .loginbtn
   {
-    /* margin: 2% auto; */
     width: 100%;
   }
 

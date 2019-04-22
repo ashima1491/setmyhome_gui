@@ -10,6 +10,7 @@
 							<div *ngIf="bookings">
 									<div class="table-responsive">
 									  <table class="table">
+											<!-- table headers for viewing all bookings by event name, time slot, user first name, user type -->
 										<thead class="thead-dark">
 										  <tr>
 											<th scope="col">Event Name</th>
@@ -20,6 +21,7 @@
 										  </tr>
 										</thead>
 										<tbody>
+											<!-- table rows for bookings-->
                       <tr *ngFor="let booking of bookings">
                         <th scope="row">{{booking.event.name}}</th>
                         <td>{{booking.timeSlot}}</td>
@@ -63,7 +65,8 @@
 										</div>
 									  </div>
 									</div>
-								  
+									
+									<!-- for rounting back to admin page -->
 									<input type="button" class="btn btn-primary main_btn main_btn_outline" [routerLink]="['/setMyHome/admin']"
 										   id="Back" value="Back">
 								  
