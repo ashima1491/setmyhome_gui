@@ -10,7 +10,6 @@ import { Booking } from '../../models/booking';
 export class BookingListComponent implements OnInit {
 
   bookings: Booking[];
-  filteredBookings: Booking;
   // add this config
   // settings = {
   //   columns: {
@@ -28,9 +27,7 @@ export class BookingListComponent implements OnInit {
   //     }
   //   }
   // };
-  constructor(private bookingService: BookingService) {
-    this.filteredBookings = null;
-  }
+  constructor( private bookingService: BookingService) { }
 
   ngOnInit() {
 
@@ -40,8 +37,4 @@ export class BookingListComponent implements OnInit {
     });
   }
 
-  openModal(x) {
-    let index = this.bookings.findIndex(input => input.bookingId == x);
-    this.filteredBookings = this.bookings[index];
-  }
 }

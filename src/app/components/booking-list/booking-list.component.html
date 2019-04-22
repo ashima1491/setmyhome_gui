@@ -1,73 +1,83 @@
-<div *ngIf="bookings">
-
-
-  <!-- <br>
-  <div class="smartTableWrapper text-center">
-  <ng2-smart-table [settings]="settings" [source]="bookings">
-    </ng2-smart-table>
-    <input type="button" class="btn expanded" [routerLink]="['/setMyHome/admin']"
-    id="Back" value="Back" >
-    </div> -->
-  <div class="table-responsive">
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Event Name</th>
-          <th scope="col">Time Slot</th>
-          <th scope="col">User Name</th>
-          <th scope="col">User Type</th>
-
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let booking of bookings">
-          <th scope="row">{{booking.event.name}}</th>
-          <td>{{booking.timeSlot}}</td>
-          <td>{{booking.person.fname}}</td>
-          <td>{{booking.person.type}}</td>
-          <td><input type="button" class="btn btn-primary" (click) ="openModal(booking.bookingId)" data-toggle="modal" data-target="#myModal"  value="View Booking" /></td>
-        </tr>
-      </tbody>
-    </table>
-
-
-  </div>
-
-  <!-- The Modal -->
-  <div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Booking Details</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-
-        <!-- Modal body -->
-        <div class="modal-body">
-          <ul>
-
-            <li>{{filteredBookings.event.name}}</li>
-            <li>{{filteredBookings.timeSlot}}</li>
-            <li>{{filteredBookings.event.date}}</li>
-            <!--<li *ngFor="let booking of bookings">{{filteredBookings.bookedFurniture.furniture.furnitureName}} {{booking.bookedFurniture.furniture.count}}</li>-->
-
-
-          </ul>
-        </div>
-
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <input type="button" class="btn expanded" [routerLink]="['/setMyHome/admin']"
-         id="Back" value="Back">
-
-
+<div class="dashboard_cont section_pad">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-10">
+				<div class="cards">
+					<div class="cards_heading">
+						<h3 class="blueTheme">Booking List</h3>
+					</div>
+					<div class="cards_content">
+							<div *ngIf="bookings">
+									<div class="table-responsive">
+									  <table class="table">
+										<thead class="thead-dark">
+										  <tr>
+											<th scope="col">Event Name</th>
+											<th scope="col">Time Slot</th>
+											<th scope="col">User Name</th>
+											<th scope="col">User Type</th>
+											<th scope="col">Action</th>
+										  </tr>
+										</thead>
+										<tbody>
+										  <tr *ngFor="let booking of bookings">
+											<th scope="row">{{booking.event.name}}</th>
+											<td>{{booking.timeSlot}}</td>
+											<td>{{booking.person.fname}}</td>
+											<td>{{booking.person.type}}</td>
+											<td><input type="button" class="btn btn-primary main_btn" data-toggle="modal" data-target="#myModal" id="details" value="View Booking" /></td>
+										  </tr>
+										</tbody>
+									  </table>
+								  
+								  
+									</div>
+								  
+									<!-- The Modal -->
+									<div class="modal fade" id="myModal">
+									  <div class="modal-dialog">
+										<div class="modal-content">
+								  
+										  <!-- Modal Header -->
+										  <div class="modal-header">
+											<h4 class="modal-title">Booking Details</h4>
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+										  </div>
+								  
+										  <!-- Modal body -->
+										  <div class="modal-body">
+											<ul>
+								  
+											  <li>{{booking.event.name}}</li>
+											  <li>{{booking.timeSlot}}</li>
+											  <li>{{booking.person.fname}}</li>
+											  <li>{{booking.person.type}}</li>
+											  <li>{{booking.person.type}}</li>
+											  <li *ngFor="let furniture of booking.bookedFurniture.furniture.furnitureName">{{furniture}}</li>
+											  <li>{{booking.bookedFurniture.count}}</li>
+											</ul>
+										  </div>
+								  
+										  <!-- Modal footer -->
+										  <div class="modal-footer">
+											<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+										  </div>
+								  
+										</div>
+									  </div>
+									</div>
+								  
+									<input type="button" class="btn btn-primary main_btn main_btn_outline" [routerLink]="['/setMyHome/admin']"
+										   id="Back" value="Back">
+								  
+								  
+								  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+
+
+

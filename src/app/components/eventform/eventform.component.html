@@ -1,67 +1,77 @@
-<form [formGroup]="rForm" (ngSubmit)="createEvent(rForm.value)" >
-  <div class="row divlogin">
-      
-    
-        
-    <div class="col-sm-6">
-   
-    <div id="eventform">
-      <h3 class="blueTheme">Create an Event</h3>
-     
-            <div class="form-group required">
-              <label class="control-label">Event Name</label>
-              <input type="text" formControlName="name" id="name" class="form-control">
-              <div class="alert alert-danger" *ngIf="!rForm.controls['name'].valid &&
-                 rForm.controls['name'].touched">
-                <div *ngIf="rForm.controls['name'].errors.required">
-                  Event name is required
-                </div>
-                <div *ngIf="rForm.controls['name'].errors.maxlength">
-                  Event name cannot be more than 30 characters
-                </div>
-                <div *ngIf="rForm.controls['name'].errors.minlength">
-                  Event name cannot be less than 5 characters
+<div class="dashboard_cont section_pad">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="cards">
+          <div class="cards_heading">
+            <h3 class="blueTheme">Register for Giveaway</h3>
+          </div>
+          <div class="cards_content">
+            <form [formGroup]="rForm" (ngSubmit)="createEvent(rForm.value)">
+              <div class="row divlogin justify-content-center">
+                <div class="col-lg-8">
+                  <div id="eventform">
+                    <h3 class="blueTheme">Create an Event</h3>
+
+                    <div class="form-group required">
+                      <label class="control-label">Event Name</label>
+                      <input type="text" formControlName="name" id="name" class="form-control">
+                      <div class="alert alert-danger" *ngIf="!rForm.controls['name'].valid &&
+                             rForm.controls['name'].touched">
+                        <div *ngIf="rForm.controls['name'].errors.required">
+                          Event name is required
+                        </div>
+                        <div *ngIf="rForm.controls['name'].errors.maxlength">
+                          Event name cannot be more than 30 characters
+                        </div>
+                        <div *ngIf="rForm.controls['name'].errors.minlength">
+                          Event name cannot be less than 5 characters
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group required">
+                      <label class="control-label">Description</label>
+                      <input type="text" title="event" formControlName="description" id="description"
+                        class="form-control">
+                      <div class="alert alert-danger"
+                        *ngIf="!rForm.controls['description'].valid && rForm.controls['description'].touched">
+                        <div *ngIf="rForm.controls['description'].errors.required">
+                          Description is required
+                        </div>
+                        <div *ngIf="rForm.controls['description'].errors.maxlength">
+                          Description cannot be more than 30 characters
+                        </div>
+                        <div *ngIf="rForm.controls['description'].errors.minlength">
+                          Description cannot be less than 5 characters
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group required">
+                      <label class="control-label">Event Date</label>
+                      <input type="date" formControlName="date" id="date" class="form-control">
+                      <div class="alert alert-danger"
+                        *ngIf="!rForm.controls['date'].valid && rForm.controls['date'].touched">
+                        <div *ngIf="rForm.controls['date'].errors.required">
+                          Event Date is required
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group d-flex text-center mt-5">
+                      <input type="submit" class="btn btn-primary main_btn" id="submit" value="Submit"
+                        [disabled]="!rForm.valid">
+                      <input type="button" class="btn btn-primary main_btn main_btn_outline" [routerLink]="['/setMyHome/admin']" id="Back"
+                        value="Back">
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-  
-            <div class="form-group required">
-              <label class="control-label">Description</label>
-              <input type="text" title="event" formControlName="description" id="description" class="form-control">
-              <div class="alert alert-danger" *ngIf="!rForm.controls['description'].valid && rForm.controls['description'].touched">
-                <div *ngIf="rForm.controls['description'].errors.required">
-                  Description is required
-                </div>
-                <div *ngIf="rForm.controls['description'].errors.maxlength">
-                  Description cannot be more than 30 characters
-                </div>
-                <div *ngIf="rForm.controls['description'].errors.minlength">
-                  Description cannot be less than 5 characters
-                </div>
-              </div>
-            </div>
-  
-            <div class="form-group required">
-              <label class="control-label">Event Date</label>
-              <input type="date" formControlName="date" id="date" class="form-control">
-              <div class="alert alert-danger" *ngIf="!rForm.controls['date'].valid && rForm.controls['date'].touched">
-                <div *ngIf="rForm.controls['date'].errors.required">
-                  Event Date is required
-                </div>
-              </div>
-            </div>
-           
-            
-            <div class="form-group">
-              <input type="submit" class="btn btn-primary expanded signUpbtn" id="submit" value="Submit" [disabled]="!rForm.valid">
-              <input type="button" class="btn expanded" [routerLink]="['/setMyHome/admin']"
-              id="Back" value="Back" >
-            </div>
-           
-    </div>  
-     
-        
-       
-    </div>   
-    </div> 
-    </form>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

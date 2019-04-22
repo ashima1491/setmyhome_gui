@@ -1,57 +1,47 @@
-<div *ngIf="users">
-   
-    <!-- <table>
-        <thead>
-          <tr>
-            <th>First Name</th>
-            <th>Last Name </th>
-            <th>Enail Address</th>
-            <th>Phone Number</th>
-            <th>User Type</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let user of users">
-            <td>{{ user.fname }}</td>
-            <td>{{ user.lname }}</td>
-            <td>{{ user.emailid }}</td>
-            <td>{{ user.phonenumber }}</td>
+<div class="dashboard_cont section_pad">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="cards">
+          <div class="cards_heading">
+            <h3 class="blueTheme">User List</h3>
+          </div>
+          <div class="cards_content">
+            <div *ngIf="users">
+              <div class="table-responsive">
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th  scope="col">User Name</th>
+                    <th  scope="col">Email Address</th>
+                    <th  scope="col">User Type</th>
+                  
+                   
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of users">
+                    <th scope="row">{{user.fname}}</th>
+                    <td>{{user.emailid}}</td>
+                    <td>{{user.type}}</td>
+                   
+                  
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mt-4">
 
-            
-          </tr>
-        </tbody>
-    </table> -->
-    <!-- <br>
-    <div class="smartTableWrapper text-center">
-    <ng2-smart-table [settings]="settings" [source]="users">
-      </ng2-smart-table>
-      <input type="button" class="btn expanded" [routerLink]="['/setMyHome/admin']"
-      id="Back" value="Back" >
-      </div> -->
-      <div class="table-responsive">
-      <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th  scope="col">User Name</th>
-            <th  scope="col">Email Address</th>
-            <th  scope="col">User Type</th>
+              <input type="button" class="btn btn-primary main_btn main_btn_outline" [routerLink]="['/setMyHome/admin']"
+              id="Back" value="Back" >
+            </div>
           
-           
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let user of users">
-            <th scope="row">{{user.fname}}</th>
-            <td>{{user.emailid}}</td>
-            <td>{{user.type}}</td>
-           
           
-          </tr>
-        </tbody>
-      </table>
+          </div>
+          </div>
+        </div>
+      </div>
     </div>
-      <input type="button" class="btn expanded" [routerLink]="['/setMyHome/admin']"
-      id="Back" value="Back" >
-  
-  
   </div>
+</div>
+

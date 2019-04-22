@@ -1,145 +1,149 @@
-<form [formGroup]="rForm" (ngSubmit)="signUp(rForm.value)" >
-<div class="row divlogin">
-    
- 
-      
-  <div class="col-sm-6">
- 
-  <div id="accntform">
-      <h3 class="blueTheme">Get ready to set your house!</h3> 
-      
-      <!-- <p id="passinstruct">Password must be 8-13 characters long. Your Password Must have at least 1 lowercase alphabet.
-          Your Password Must have at least 1 uppercase alphabet. Your Password Must have at least 1 number.</p>
-  -->
-          <div class="form-group required">
-            <label class="control-label">First Name</label>
-            <input type="text" formControlName="fname" id="fname" pattern="[a-zA-Z]*" class="form-control" placeholder="Your first name">
-            <div class="alert alert-danger" *ngIf="!rForm.controls['fname'].valid &&
-               rForm.controls['fname'].touched">
-              <div *ngIf="rForm.controls['fname'].errors.required">
-                First name is required
-              </div>
-              <div *ngIf="rForm.controls['fname'].errors.pattern">
-               Invalid characters in the First Name
-              </div>
-              <div *ngIf="rForm.controls['fname'].errors.maxlength">
-                First name cannot be more than 25 characters
-              </div>
-            </div>
-          </div>
 
-          <div class="form-group required">
-            <label class="control-label">Last Name</label>
-            <input type="text" formControlName="lname" id="lname" pattern="[a-zA-Z ]*" class="form-control" placeholder="Your last name">
-            <div class="alert alert-danger" *ngIf="!rForm.controls['lname'].valid && rForm.controls['lname'].touched">
-              <div *ngIf="rForm.controls['lname'].errors.required">
-                Last name is required
-              </div>
-              <div *ngIf="rForm.controls['lname'].errors.pattern">
-                Invalid characters in the Last Name
-              </div>
-              <div *ngIf="rForm.controls['lname'].errors.maxlength">
-                Last name cannot be more than 25 characters
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group required">
-            <label class="control-label">Email Address</label>
-            <input type="email" formControlName="emailid" id="emailid" class="form-control" placeholder="Your valid email" email>
-            <div class="alert alert-danger" *ngIf="!rForm.controls['emailid'].valid && rForm.controls['emailid'].touched">
-              <div *ngIf="rForm.controls['emailid'].errors.required">
-                Email address is required
-              </div>
-              <div *ngIf="rForm.controls['emailid'].errors.email">
-               Invalid Email address
-              </div>
-              <div *ngIf="rForm.controls['emailid'].errors.maxlength">
-                Email ID cannot be more than 30 characters
-              </div>
-            </div>
-          </div>
-
-          <!-- <div class="form-group required">
-            <label class="control-label">Phone Number</label>
-            <input type="text" formControlName="phonenumber" id="phonenumber" class="form-control">
-            <div class="alert alert-danger" *ngIf="!rForm.controls['phonenumber'].valid && rForm.controls['phonenumber'].touched">
-              <div *ngIf="rForm.controls['phonenumber'].errors.required">
-                Phone Number is required
-              </div>
-              <div *ngIf="rForm.controls['phonenumber'].errors.maxlength">
-                Phone Number cannot be more than 10 characters 
-              </div>
-            </div>
-          </div> -->
-
-          <div class="form-group required">
-            <label class="control-label">Password</label>
-            <input type="password" formControlName="password" id="password" class="form-control" placeholder="Atleast 8 character password with one letter and number">
-            <div class="alert alert-danger" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">
-              <div *ngIf="rForm.controls['password'].errors.required">
-                Password is required
-              </div>
-              <div *ngIf="rForm.controls['password'].errors.maxlength">
-                 Password cannot be more than 13 characters 
-              </div>
-              <div *ngIf="rForm.controls['password'].errors.minlength">
-                Password cannot be less than 8 characters 
-             </div>
-            </div>
-          </div>
-
-          <div class="form-group required">
-            <label class="control-label">Confirm Password</label>
-            <input type="password" formControlName="cpassword" id="cpassword" class="form-control" placeholder="Confirm your password">
-            <div class="alert alert-danger" *ngIf="!rForm.controls['cpassword'].valid && rForm.controls['cpassword'].touched">
-              <div *ngIf="rForm.controls['cpassword'].errors.required">
-                Confirmed Password is required
-              </div>
-              <div *ngIf="rForm.controls['cpassword'].errors.maxlength">
-                Confirmed Password cannot be more than 13 characters 
-              </div>
-              <div *ngIf="rForm.controls['cpassword'].errors.minlength">
-                Confirmed Password cannot be less than 8 characters 
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group required">
-            <!-- <label class="form-check-label"> Are you a: </label> -->
-
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" formControlName="type" 
-              name="type" id="admin" value="admin" checked
-                >
-              <label class="form-check-label" for="admin"> Admin</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" formControlName="type"
-               name="type" id="donor" value="donor" >
-              <label class="form-check-label" for="donor">Donor</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" formControlName="type" 
-              name="type" id="student" value="student">
-              <label class="form-check-label" for="student"> Student</label>
-            </div>
+<div class="dashboard_cont mt-5 pt-5" >
+    <form [formGroup]="rForm" (ngSubmit)="signUp(rForm.value)" >
+        <div class="row divlogin">
             
-          </div>
-          <button type="button" id="btnhaveacc" [routerLink]="['/setMyHome/login']"
-						>Already have
-						an account?</button>
-          <div class="form-group">
-            <input type="submit" class="btn btn-primary expanded signUpbtn" id="submit" value="Sign Up" [disabled]="!rForm.valid">
-          </div>
-  </div>  
-   
-      
-     
-  </div>   
-  <div class="col-sm-6 divmascot" >   
-
-      <img src="../../../assets/images/signUpBg.jpg" alt="mascot">    
+         
+              
+          <div class="col-sm-6">
+         
+          <div id="accntform">
+              <h3 class="blueTheme">Get ready to set your house!</h3> 
+              
+              <!-- <p id="passinstruct">Password must be 8-13 characters long. Your Password Must have at least 1 lowercase alphabet.
+                  Your Password Must have at least 1 uppercase alphabet. Your Password Must have at least 1 number.</p>
+          -->
+                  <div class="form-group required">
+                    <label class="control-label">First Name</label>
+                    <input type="text" formControlName="fname" id="fname" pattern="[a-zA-Z]*" class="form-control" placeholder="Your first name">
+                    <div class="alert alert-danger" *ngIf="!rForm.controls['fname'].valid &&
+                       rForm.controls['fname'].touched">
+                      <div *ngIf="rForm.controls['fname'].errors.required">
+                        First name is required
+                      </div>
+                      <div *ngIf="rForm.controls['fname'].errors.pattern">
+                       Invalid characters in the First Name
+                      </div>
+                      <div *ngIf="rForm.controls['fname'].errors.maxlength">
+                        First name cannot be more than 25 characters
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="form-group required">
+                    <label class="control-label">Last Name</label>
+                    <input type="text" formControlName="lname" id="lname" pattern="[a-zA-Z ]*" class="form-control" placeholder="Your last name">
+                    <div class="alert alert-danger" *ngIf="!rForm.controls['lname'].valid && rForm.controls['lname'].touched">
+                      <div *ngIf="rForm.controls['lname'].errors.required">
+                        Last name is required
+                      </div>
+                      <div *ngIf="rForm.controls['lname'].errors.pattern">
+                        Invalid characters in the Last Name
+                      </div>
+                      <div *ngIf="rForm.controls['lname'].errors.maxlength">
+                        Last name cannot be more than 25 characters
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="form-group required">
+                    <label class="control-label">Email Address</label>
+                    <input type="email" formControlName="emailid" id="emailid" class="form-control" placeholder="Your valid email" email>
+                    <div class="alert alert-danger" *ngIf="!rForm.controls['emailid'].valid && rForm.controls['emailid'].touched">
+                      <div *ngIf="rForm.controls['emailid'].errors.required">
+                        Email address is required
+                      </div>
+                      <div *ngIf="rForm.controls['emailid'].errors.email">
+                       Invalid Email address
+                      </div>
+                      <div *ngIf="rForm.controls['emailid'].errors.maxlength">
+                        Email ID cannot be more than 30 characters
+                      </div>
+                    </div>
+                  </div>
+        
+                  <!-- <div class="form-group required">
+                    <label class="control-label">Phone Number</label>
+                    <input type="text" formControlName="phonenumber" id="phonenumber" class="form-control">
+                    <div class="alert alert-danger" *ngIf="!rForm.controls['phonenumber'].valid && rForm.controls['phonenumber'].touched">
+                      <div *ngIf="rForm.controls['phonenumber'].errors.required">
+                        Phone Number is required
+                      </div>
+                      <div *ngIf="rForm.controls['phonenumber'].errors.maxlength">
+                        Phone Number cannot be more than 10 characters 
+                      </div>
+                    </div>
+                  </div> -->
+        
+                  <div class="form-group required">
+                    <label class="control-label">Password</label>
+                    <input type="password" formControlName="password" id="password" class="form-control" placeholder="Atleast 8 character password with one letter and number">
+                    <div class="alert alert-danger" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">
+                      <div *ngIf="rForm.controls['password'].errors.required">
+                        Password is required
+                      </div>
+                      <div *ngIf="rForm.controls['password'].errors.maxlength">
+                         Password cannot be more than 13 characters 
+                      </div>
+                      <div *ngIf="rForm.controls['password'].errors.minlength">
+                        Password cannot be less than 8 characters 
+                     </div>
+                    </div>
+                  </div>
+        
+                  <div class="form-group required">
+                    <label class="control-label">Confirm Password</label>
+                    <input type="password" formControlName="cpassword" id="cpassword" class="form-control" placeholder="Confirm your password">
+                    <div class="alert alert-danger" *ngIf="!rForm.controls['cpassword'].valid && rForm.controls['cpassword'].touched">
+                      <div *ngIf="rForm.controls['cpassword'].errors.required">
+                        Confirmed Password is required
+                      </div>
+                      <div *ngIf="rForm.controls['cpassword'].errors.maxlength">
+                        Confirmed Password cannot be more than 13 characters 
+                      </div>
+                      <div *ngIf="rForm.controls['cpassword'].errors.minlength">
+                        Confirmed Password cannot be less than 8 characters 
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="form-group required">
+                    <!-- <label class="form-check-label"> Are you a: </label> -->
+        
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" formControlName="type" 
+                      name="type" id="admin" value="admin" checked
+                        >
+                      <label class="form-check-label" for="admin"> Admin</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" formControlName="type"
+                       name="type" id="donor" value="donor" >
+                      <label class="form-check-label" for="donor">Donor</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" formControlName="type" 
+                      name="type" id="student" value="student">
+                      <label class="form-check-label" for="student"> Student</label>
+                    </div>
+                    
+                  </div>
+                  <button type="button" id="btnhaveacc" [routerLink]="['/setMyHome/login']"
+                    >Already have
+                    an account?</button>
+                  <div class="form-group">
+                    <input type="submit" class="btn btn-primary expanded signUpbtn" id="submit" value="Sign Up" [disabled]="!rForm.valid">
+                  </div>
+          </div>  
+           
+              
+             
+          </div>   
+          <div class="col-sm-6 divmascot" >   
+        
+              <img src="../../../assets/images/signUpBg.jpg" alt="mascot">    
+                  </div> 
           </div> 
-  </div> 
-  </form>
+          </form>
+</div>
+

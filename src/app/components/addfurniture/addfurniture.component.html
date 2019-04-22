@@ -1,46 +1,61 @@
+<div class="dashboard_cont section_pad">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="cards">
+          <div class="cards_heading">
+            <h3 class="blueTheme">Add Furniture</h3>
+          </div>
+          <div class="cards_content">
+            
 <form [formGroup]="rForm" (ngSubmit)="addfurniture(rForm.value)" >
-  <div class="row">
+    <div class="row justify-content-center">
+        
       
+      <div class="col-lg-8">
+     
+      <div id="addfurnuture">
+              <div class="form-group required">
+                <label class="control-label">Category</label>
+                <select class="form-control" formControlName="category" id="category">
+                    
+                  <option value="Heavy"  [selected]="true">Heavy</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Small">Small</option>
+                </select>
+              </div>
     
-    <div class="col-sm-6">
-   
-    <div id="addfurnuture">
-      <h3 class="blueTheme">Add Furniture</h3>
-    
-            <div class="form-group required">
-              <label class="control-label">Category</label>
-              <select class="form-control" formControlName="category" id="category">
-                  
-                <option value="Heavy"  [selected]="true">Heavy</option>
-                <option value="Medium">Medium</option>
-                <option value="Small">Small</option>
-              </select>
-            </div>
-  
-            <div class="form-group required">
-              <label class="control-label">Furniture Name</label>
-              <input type="text" formControlName="furnitureName" id="furnitureName" class="form-control">
-              <div class="alert alert-danger" *ngIf="!rForm.controls['furnitureName'].valid &&
-                 rForm.controls['furnitureName'].touched">
-                <div *ngIf="rForm.controls['furnitureName'].errors.required">
-                  Furniture name is required
-                </div>
-                <div *ngIf="rForm.controls['furnitureName'].errors.maxlength">
-                  Furniture name cannot be more than 30 characters
-                </div>
-                <div *ngIf="rForm.controls['furnitureName'].errors.minlength">
-                  Furniture name cannot be less than 2 characters
+              <div class="form-group required">
+                <label class="control-label">Furniture Name</label>
+                <input type="text" formControlName="furnitureName" id="furnitureName" class="form-control">
+                <div class="alert alert-danger" *ngIf="!rForm.controls['furnitureName'].valid &&
+                   rForm.controls['furnitureName'].touched">
+                  <div *ngIf="rForm.controls['furnitureName'].errors.required">
+                    Furniture name is required
+                  </div>
+                  <div *ngIf="rForm.controls['furnitureName'].errors.maxlength">
+                    Furniture name cannot be more than 30 characters
+                  </div>
+                  <div *ngIf="rForm.controls['furnitureName'].errors.minlength">
+                    Furniture name cannot be less than 2 characters
+                  </div>
                 </div>
               </div>
-            </div>
-           
-            <div class="form-group">
-              <input type="submit" class="btn btn-primary expanded signUpbtn" id="submit" value="Add Furniture" [disabled]="!rForm.valid">
-              <input type="button" class="btn expanded" [routerLink]="['/setMyHome/admin']"
-              id="Back" value="Back" >
-            </div>
-    </div>  
-       
-    </div>   
-    </div> 
-    </form>
+             
+              <div class="form-group text-center mt-5">
+                <input type="submit" class="btn btn-primary main_btn" id="submit" value="Add Furniture" [disabled]="!rForm.valid">
+                <input type="button" class="btn btn-primary main_btn main_btn_outline" [routerLink]="['/setMyHome/admin']"
+                id="Back" value="Back" >
+              </div>
+      </div>  
+         
+      </div>   
+      </div> 
+      </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
