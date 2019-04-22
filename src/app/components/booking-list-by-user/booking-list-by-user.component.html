@@ -23,15 +23,15 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr *ngFor="let booking of bookings">
-											<th scope="row">{{booking.event.name}}</th>
-											<td>{{booking.timeSlot}}</td>
-											<td>{{booking.event.date}}</td>
-											<!-- <td>{{booking.mediumFurnitureName}}&nbsp;{{booking.mediumCategoryCount}}</td>
-                          <td>{{booking.smallFurnitureName}}&nbsp;{{booking.lowCategoryCount}}</td> -->
-											<td><input type="button" class="btn btn-primary main_btn" data-toggle="modal"
-													data-target="#myModal" id="details" value="View Booking" /></td>
-										</tr>
+                    <tr *ngFor="let booking of bookings">
+                      <th scope="row">{{booking.event.name}}</th>
+                      <td>{{booking.timeSlot}}</td>
+                      <td>{{booking.event.date}}</td>
+                      <!-- <td>{{booking.mediumFurnitureName}}&nbsp;{{booking.mediumCategoryCount}}</td>
+      <td>{{booking.smallFurnitureName}}&nbsp;{{booking.lowCategoryCount}}</td> -->
+                      <td><input type="button" class="btn btn-primary main_btn" (click)="openModal(booking.bookingId)" data-toggle="modal"
+                                 data-target="#myModal" value="View Booking" id="details"/></td>
+                    </tr>
 									</tbody>
 								</table>
 							</div>
@@ -49,16 +49,12 @@
 
 										<!-- Modal body -->
 										<div class="modal-body">
-											<ul>
-
-												<li>{{booking.event.name}}</li>
-												<li>{{booking.timeSlot}}</li>
-												<li>{{booking.event.date}}</li>
-												<li
-													*ngFor="let furniture of booking.bookedFurniture.furniture.furnitureName">
-													{{furniture}}</li>
-												<li>{{booking.bookedFurniture.count}}</li>
-											</ul>
+                      <ul>
+                        <li>{{filteredBookings.event.name}}</li>
+                        <li>{{filteredBookings.timeSlot}}</li>
+                        <li>{{filteredBookings.event.date}}</li>
+                        <!--<li *ngFor="let booking of bookings">{{filteredBookings.bookedFurniture.furniture.furnitureName}} &nbsp; Count:{{filteredBookings.bookedFurniture.furniture.count}}</li>-->
+                      </ul>
 										</div>
 
 										<!-- Modal footer -->

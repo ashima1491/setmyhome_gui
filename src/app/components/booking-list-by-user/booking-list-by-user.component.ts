@@ -13,16 +13,23 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 export class BookingListByUserComponent implements OnInit {
 
   bookings: Booking[];
-  constructor(private userService:UserServiceService ,private bookingService: BookingService) { }
+  filteredBookings: Booking;
+  constructor(private userService: UserServiceService, private bookingService: BookingService) {
+    this.filteredBookings = null;}
 
   ngOnInit() {
 
     var userId=this.userService.getUserId();
     this.bookingService.getAllBookingsByUser(userId).subscribe(bookings => {
       console.log(bookings);
-      this.bookings = bookings;
-      
+      this.bookings = bookings; 
     });
+
+  }
+
+  openModal(x) {
+    let index = this.bookings.findIndex(input => input.bookingId == x);
+    this.filteredBookings = this.bookings[index];
   }
 
 }
