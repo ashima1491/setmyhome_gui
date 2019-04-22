@@ -1,14 +1,14 @@
 
-.divlogin{                    /* css for div containing login section */
-    margin-top: 5%;
-    padding-bottom: 2.5rem;
+.divlogin{                    /* CSS for div containing login section */
+    margin-top: 5%;            /*5% is the width of .divlogin to make it more responsive*/
+    padding-bottom: 2.5rem;     /*rem is relative to font-size of root element*/
     overflow: hidden;
 }
 
 .divmascot img
 {   
     max-width:100%;     /* for responsiveness */
-    max-height:100%;
+    max-height:100%;     /*100% of .divmascot element's height to make it responsive*/
 }
 
 .divlogin input
@@ -21,14 +21,14 @@
 	border: grey;
 	font-size: 20px;
 	color: white;
-    padding: 2%;
-    margin: 4%;
-    width: 65%;
+    padding: 2%;    /*Specified in percentages to make it responsive*/
+    margin: 4%;      /*Specified in percentages to make it responsive*/
+    width: 65%;     /*Specified in percentages to make it responsive*/
 }
 
 
 .divlogin h3{
-    padding: 2% 0;
+    padding: 2% 0;  /*Specified in percentages to make it responsive*/
 }
 
 
@@ -37,26 +37,26 @@
 {
     text-decoration: none;
     color: green;
-    margin: 0 6%;
+    margin: 0 6%;   /*Specified in percentages to make it responsive*/
 }
 
- #btnhaveacc   /* css for button 'Already have an Account?' */
+ #btnhaveacc   /* CSS for button 'Already have an Account?' */
 {
     background-color: transparent;  
     color:green;
     margin-bottom: 0;
-    padding-bottom:2% ;
+    padding-bottom:2% ; /*Specified in percentages to make it responsive*/
     font-size: 1em;
     margin: auto;
-    width: 100%;    
+    width: 100%;        /*100% of #btnhaveacc's width*/
 }
 
 
 #accntform             /* div containing the login form */
 {
-    width: 100%;
+    width: 100%;    /*Specified in percentages to make it responsive*/
     background-color: rgb(248, 250, 251);
-    padding: 5%;
+    padding: 5%;    /*Specified in percentages to make it responsive*/
     margin: 0 auto; /* center aligning */
 
 }
@@ -69,7 +69,7 @@
 
 #passinstruct
 {
-    padding: 2%;
+    padding: 2%;    /*Specified in percentages to make it responsive*/
     background-color: lightgreen;
 
 }
@@ -83,18 +83,18 @@
   @media (max-width: 985px)
 {
     .divlogin.col-sm-6 {
-        width: 80%;
+        width: 80%; /*Specified in percentages to make it responsive*/
         overflow: hidden;
     }
     
     .divlogin.col-sm-4{
-         width: 80%;
+         width: 80%;    /*Specified in percentages to make it responsive*/
         overflow: hidden;
     }
     
     .divmascot img{
-        width: 50%;
-        margin-left: 25%;
+        width: 50%;         /*50% of .divmascot width*/
+        margin-left: 25%;   /*Specified in percentages to make it responsive*/
     }
     
     footer{
