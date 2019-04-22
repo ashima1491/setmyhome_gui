@@ -12,4 +12,7 @@ export class ContactUsComponent implements OnInit {
   ngOnInit() {
   }
 
+  submit() {
+    alert("Thanks for connecting with us");
+  }
 }
