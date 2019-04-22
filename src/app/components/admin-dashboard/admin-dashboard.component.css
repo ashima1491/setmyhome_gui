@@ -1,21 +1,20 @@
-.firstRow
+/*.firstRow
 {
     margin: 5%;
     
     
-}
+}*/
 
 /* .mycontainer
 {
     background-color: #FF9791;
 } */
-  
 
-.adminDb
-{
-    margin:2%;
+
+h2 {
+  margin-top: 20%;
+  text-align: center;
 }
-
 
 .flex-container input[type=button]
 {
@@ -62,7 +61,13 @@
     {
     height: 20vw;
     /* width: 15vw; */
-    } 
+    }
 
+
+    h2 {
+      margin: 9%;
+      font-size: 1.5vw !important;
+      text-align: center;
+    }
 
 }

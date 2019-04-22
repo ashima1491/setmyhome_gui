@@ -12,3 +12,12 @@ background-color: lightgray;
     padding:0 2% 0 2%;
 }
 
+a {
+  font-family: 'Century Gothic', Verdana, 'Helvetica Neue', sans-serif !important;
+  text-decoration: none;
+  color:black;
+}
+
+  a:hover {
+    text-decoration: none;
+  }

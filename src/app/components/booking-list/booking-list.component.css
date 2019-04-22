@@ -3,6 +3,7 @@
     overflow-x: auto;
 }
 
-ul{
-  text-decoration-style:none;
+ul {
+  list-style-type: none;
 }
+

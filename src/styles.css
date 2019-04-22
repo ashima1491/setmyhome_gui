@@ -17,10 +17,10 @@ body{
     box-sizing: border-box;
 }
 
-.btn
-{
-color: white !important;
-background-color: #4189CC !important;
+.btn {
+  color: white !important;
+  background-color: #4189CC !important;
+  font-size: 2.8vw !important;
 }
 
 .blueTheme {
@@ -73,4 +73,13 @@ background-color: #4189CC !important;
 	border: solid 2px royalblue;
 	color:#000 !important;
 	margin-left:15px;
+}
+
+@media only screen and (min-width: 786px) {
+  .btn {
+    color: white !important;
+    background-color: #4189CC !important;
+    font-size: 1vw !important;
+  }
+
 }

@@ -50,10 +50,11 @@
 										<!-- Modal body -->
 										<div class="modal-body">
                       <ul>
-                        <li>{{filteredBookings.event.name}}</li>
-                        <li>{{filteredBookings.timeSlot}}</li>
-                        <li>{{filteredBookings.event.date}}</li>
-                        <!--<li *ngFor="let booking of bookings">{{filteredBookings.bookedFurniture.furniture.furnitureName}} &nbsp; Count:{{filteredBookings.bookedFurniture.furniture.count}}</li>-->
+                        <li><strong>Event: </strong>{{filteredBookings.event.name}}</li>
+                        <li><strong>Time slot: </strong>{{filteredBookings.timeSlot}}</li>
+                        <li><strong>Event Date: </strong>{{filteredBookings.event.date}}</li>
+                        <li><strong>Furniture Items:</strong></li>
+                        <!--<li *ngFor="let booking of bookings">{{filteredBookings.bookedFurniture.furniture.furnitureName}}&nbsp; Count: {{booking.bookedFurniture.furniture.count}}</li>-->
                       </ul>
 										</div>
 
@@ -76,3 +77,7 @@
 		</div>
 	</div>
 </div>
+<br />
+<br />
+<br />
+<br />
