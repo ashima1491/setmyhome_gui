@@ -192,7 +192,7 @@ export class BookingComponent implements OnInit {
 
         } else {
           let stock = this.furnitureKeyValue[index].count - count;
-          alert("We currently have " + stock + " items of this furniture left");
+          alert("We currently have only " + this.furnitureKeyValue[index].count + " items of this furniture left");
         }
       }
     
