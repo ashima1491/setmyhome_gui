@@ -4,11 +4,12 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\admin-dashboard",
+    "\\src\\app\\components\\booking-list",
+    "\\src\\app\\components\\booking-list-by-user",
     "\\src\\app\\components\\contact-us",
     "\\src\\app\\components\\sign-up-form",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\components\\admin-dashboard\\admin-dashboard.component.html",
+  "SelectedNode": "\\src\\app\\components\\booking-list-by-user\\booking-list-by-user.component.html",
   "PreviewInSolutionExplorer": false
 }

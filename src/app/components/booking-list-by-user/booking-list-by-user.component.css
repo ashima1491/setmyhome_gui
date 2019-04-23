@@ -1,3 +1,9 @@
 ul{
   list-style-type:none;
 }
+
+
+.divalign {
+  padding-left: 0 !important;
+  padding: 4% !important;
+}
