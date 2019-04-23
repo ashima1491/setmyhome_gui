@@ -14,7 +14,7 @@
 										<thead class="thead-dark">
 										  <tr>
 											<th scope="col">Event Name</th>
-											<th scope="col">Time Slot</th>
+											<!-- <th scope="col">Time Slot</th> -->
 											<th scope="col">User Name</th>
 											<th scope="col">User Type</th>
 											<th scope="col">Action</th>
@@ -24,7 +24,7 @@
 											<!-- table rows for bookings-->
                       <tr *ngFor="let booking of bookings">
                         <th scope="row">{{booking.event.name}}</th>
-                        <td>{{booking.timeSlot}}</td>
+                        <!-- <td>{{booking.timeSlot}}</td> -->
                         <td>{{booking.person.fname}}</td>
                         <td>{{booking.person.type}}</td>
                         <td><input type="button" class="btn btn-primary" (click)="openModal(booking.bookingId)" data-toggle="modal" data-target="#myModal" value="View Booking" id="details" /></td>
@@ -48,13 +48,44 @@
 								  
 										  <!-- Modal body -->
                       <div class="modal-body">
-                        <ul>
-                          <li><strong>Event: </strong>{{filteredBookings.event.name}}</li>
-                          <li><strong>Time slot: </strong>{{filteredBookings.timeSlot}}</li>
-                          <li><strong>Event Date: </strong>{{filteredBookings.event.date}}</li>
-                          <li><strong>Furniture Items:</strong></li>
-                          <!--<li *ngFor="let booking of bookings">{{filteredBookings.bookedFurniture.furniture.furnitureName}}&nbsp; Count: {{booking.bookedFurniture.furniture.count}}</li>-->
-                        </ul>
+
+
+                       	<div *ngIf="filteredBookings">
+													<ul>
+															<li><strong>Event: </strong>{{filteredBookings.event.name}}</li>
+															<li><strong>Time Slot: </strong>{{filteredBookings.timeSlot}}</li>
+															<li><strong>Date: </strong>{{filteredBookings.event.date}}</li>
+															<li><strong>Items </strong></li>
+															
+
+
+
+															<div class="table-responsive">
+																	<table class="table">
+																		<thead class="thead-dark">
+																			<tr>
+																				<th scope="col">Furniture Name</th>
+																				<th scope="col">Quantity</th>
+																				
+									
+																				
+																			</tr>
+																		</thead>
+																		<tbody>
+																																	
+									
+														<tr *ngFor="let bookedFurniture of filteredBookings.bookedFurniture">
+														  <th scope="row">{{bookedFurniture.furniture.furnitureName}}</th>
+														  <td>{{bookedFurniture.count}}</td>
+														  
+														</tr>
+																		</tbody>
+																	</table>
+																</div>
+
+															<!-- <li *ngFor="let bookedFurniture of filteredBookings.bookedFurniture">{{bookedFurniture.furniture.furnitureName}}&nbsp; Quantity: {{bookedFurniture.count}}</li> -->
+														  </ul>
+											</div>
                       </div>
 								  
 										  <!-- Modal footer -->

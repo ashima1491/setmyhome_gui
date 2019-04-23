@@ -30,6 +30,7 @@ export class BookingListByUserComponent implements OnInit {
   openModal(x) {
     let index = this.bookings.findIndex(input => input.bookingId == x);
     this.filteredBookings = this.bookings[index];
+    console.log(this.filteredBookings);
   }
 
 }
